@@ -1,8 +1,26 @@
 # Repositório da eng. de sw
 
+- [1. Descrição do sistema](#1-descrição-do-sistema)
+- [2. Problema e descrição do negócio](#2-problema-e-descrição-do-negócio)
+- [3. Visão geral do sistema.](#3-visão-geral-do-sistema)
+- [4. Diagrama ER](#4-diagrama-er)
+- [5. Diagrama de classe](#5-diagrama-de-classe)
+- [6. Casos de uso](#6-casos-de-uso)
+  - [6.1 Histórias de usuário](#61-histórias-de-usuário)
+- [7. Diagrama de componentes](#7-diagrama-de-componentes)
+- [8. Diagrama de implantação](#8-diagrama-de-implantação)
+- [9. Protótipo de telas](#9-protótipo-de-telas)
+- [10. Diagrama de navegação de telas](#10-diagrama-de-navegação-de-telas)
+- [11. Pilha tecnológica](#11-pilha-tecnológica)
+- [12. Requisitos de sistemas](#12-requisitos-de-sistemas)
+- [13. Considerações sobre segurança](#13-considerações-sobre-segurança)
+- [14. Manutenção e instalação](#14-manutenção-e-instalação)
+- [15. Glossário](#15-glossário)
+- [16. Script SQL](#16-script-sql)
+
 # 1. Visão geral do problema
 
-O projeto a seguir apresenta um sistema desenvolvido para uma petshop. A empresa é considerada micro e iniciaou as atividades recentemente ao possuir serviços exclusivos, os sistemas presentes no mercado não se enquadra, desta forma, os proprietarios dicidiram desenvolver uma solução própria.
+O projeto a seguir apresenta um sistema desenvolvido para um petshop. A empresa é considerada micro e iniciou as atividades recentemente. Ao possuir serviços exclusivos, os sistemas presentes no mercado não se enquadra, desta forma, os proprietários decidiram desenvolver uma solução própria. Esta solução é detelhada a seguir:
 
 # 2. Problema e descrição do negócio
 
@@ -28,11 +46,11 @@ Descrição do cenario onde o sistema deverá funcionar;
 18. O veterinário deverá examinar o animal e anotar em prontuário(ficha) suas observações.
 19. Dependendo da situação do animal este receberá uma receita.
 20. Integração com sistemas de pagamento: o sistema deve permitir que os clientes paguem consultas e serviços diretamente na plataforma, com a possibilidade de emitir notas fiscais eletrônicas.
-21. Notificações automáticas: o sistema deve enviar lembretes automáticos para os clientes sobre consultas agendadas ou a necessidade de exames de acompanhamento.
+21. Notificações automáticas: o sistema deve enviar lembretes automáticos para os clientes sobre consultas agendadas.
 22. Histórico médico completo do animal: o sistema deve permitir o acompanhamento detalhado do histórico de saúde, vacinas, exames, cirurgias e medicações do animal.
-23. Relatórios financeiros: o sistema deve gerar relatórios financeiros automáticos para a clínica, com detalhes sobre faturamento diário, semanal ou mensal.
-24. Controle de estoque: o sistema deve monitorar o estoque de medicamentos, rações e outros insumos da clínica, alertando sobre a necessidade de reposição.
-25. Emissão de certificados de vacinação: o sistema deve gerar certificados de vacinação atualizados para os animais, conforme as vacinas forem aplicadas.
+23. Relatórios financeiros
+24. Controle de estoque
+25. Emissão de carteira de vacinação
 
 # 3. Visao geral do sistema
 
