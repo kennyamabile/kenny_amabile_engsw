@@ -55,7 +55,7 @@ Descrição do cenario onde o sistema deverá funcionar;
 27. Prontuario eletronico com anamnese, recituario, evolução e alergias.
 28. Grid com classificação de risco dos pets internados.
 29. Histórico de atendimentos.
-30. Módulo de farmacia, constando medicados, diluentes e reconstituintes presentes na clínica.
+30. Módulo de farmacia, constando medicamentos, diluentes e reconstituintes presentes na clínica.
 
 # 3. Visao geral do sistema
 
