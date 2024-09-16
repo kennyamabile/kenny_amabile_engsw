@@ -48,9 +48,14 @@ Descrição do cenario onde o sistema deverá funcionar;
 20. Integração com sistemas de pagamento: o sistema deve permitir que os clientes paguem consultas e serviços diretamente na plataforma, com a possibilidade de emitir notas fiscais eletrônicas.
 21. Notificações automáticas: o sistema deve enviar lembretes automáticos para os clientes sobre consultas agendadas.
 22. Histórico médico completo do animal: o sistema deve permitir o acompanhamento detalhado do histórico de saúde, vacinas, exames, cirurgias e medicações do animal.
-23. Relatórios financeiros
-24. Controle de estoque
-25. Emissão de carteira de vacinação
+23. Relatórios financeiros.
+24. Controle de estoque de itens cirurgicos.
+25. Emissão de carteira de vacinação.
+26. Emissão de declaração de comparecimento para tutores.
+27. Prontuario eletronico com anamnese, recituario, evolução e alergias.
+28. Grid com classificação de risco dos pets internados.
+29. Histórico de atendimentos.
+30. Módulo de farmacia, constando medicados, diluentes e reconstituintes presentes na clínica.
 
 # 3. Visao geral do sistema
 
