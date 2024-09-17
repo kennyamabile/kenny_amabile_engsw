@@ -57,7 +57,7 @@ Descrição do cenario onde o sistema deverá funcionar;
 29. Histórico de atendimentos.
 30. Módulo de farmacia, constando medicamentos, diluentes e reconstituintes presentes na clínica.
 
-# 3. Visao geral do sistema
+# 3. Visão geral do sistema
 
 # 4. Descrição do sistema e suas relações
 
@@ -70,7 +70,7 @@ Descrição do cenario onde o sistema deverá funcionar;
 
 # 8. Diagrama de implantação
 
-# 9. Prototipo de telas
+# 9. Protótipo de telas
 
 # 10. Diagrama de navegação de telas
 
@@ -84,4 +84,4 @@ Descrição do cenario onde o sistema deverá funcionar;
 
 # 15. Glossário
 
-# 16. Script sql
+# 16. Script SQL
