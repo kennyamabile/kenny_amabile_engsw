@@ -1,7 +1,7 @@
 # Repositório da eng. de sw
 
 - [1. Descrição do sistema](#1-descrição-do-sistema)
-- [2. Problema e descrição do negócio](#2-problema-e-descrição-do-negócio)
+- [2. Descrição do negócio](#2-descrição-do-negócio)
 - [3. Visão geral do sistema.](#3-visão-geral-do-sistema)
 - [4. Diagrama ER](#4-diagrama-er)
 - [5. Diagrama de classe](#5-diagrama-de-classe)
@@ -22,7 +22,7 @@
 
 O projeto a seguir apresenta um sistema desenvolvido para um PetShop. A empresa é considerada micro e iniciou as atividades recentemente. Ao possuir serviços exclusivos, os sistemas presentes no mercado não se enquadra, desta forma, os proprietários decidiram desenvolver uma solução própria. Esta solução é detalhada a seguir:
 
-# 2. Problema e descrição do negócio
+# 2. Descrição do negócio
 
 Descrição do cenario onde o sistema deverá funcionar;
 
@@ -59,9 +59,89 @@ Descrição do cenario onde o sistema deverá funcionar;
 
 # 3. Visão geral do sistema
 
-# 4. Descrição do sistema e suas relações
+# 4. Diagrama ER
+```mermaid
+erDiagram
+    CLIENTES {
+        string id "ID do Cliente"
+        string nome "Nome do Cliente"
+        string cpf "CPF"
+        string telefone "Telefone"
+    }
 
-# 5. Diagrama ER
+
+    ANIMAIS {
+        string id "ID do Animal"
+        string nome "Nome do Animal"
+        string tipo "Tipo (Gato/Cachorro)"
+        string raca "Raça"
+        string condicoes "Condições ao Chegar"
+        string habitos "Hábitos"
+        string tipo_racao "Tipo de Ração"
+        string carteira_vacinacao "Carteira de Vacinação"
+        string prontuario "Prontuário Eletrônico"
+    }
+
+    VETERINARIOS {
+        string id "ID do Veterinário"
+        string nome "Nome do Veterinário"
+        string especialidade "Especialidade"
+    }
+
+    ATENDENTES {
+        string id "ID do Atendente"
+        string nome "Nome do Atendente"
+    }
+
+    ATENDIMENTOS {
+        string id "ID do Atendimento"
+        date data "Data do Atendimento"
+        string resultado "Resultado da Entrevista"
+        string receita "Receita"
+        string anotacoes "Anotações do Veterinário"
+        string declaracao_comparecimento "Declaração de Comparecimento"
+        string prontuario "Prontuário Eletrônico"
+    }
+
+    AGENDA {
+        string id "ID da Agenda"
+        date data "Data"
+        string horario "Horário"
+    }
+
+    PAGAMENTOS {
+        string id "ID do Pagamento"
+        float valor "Valor"
+        string tipo "Tipo (Consulta/Serviço)"
+        string nota_fiscal "Nota Fiscal"
+    }
+
+    ESTOQUE {
+        string id "ID do Item"
+        string nome "Nome do Item"
+        int quantidade "Quantidade"
+    }
+
+    FARMACIA {
+        string id "ID do Medicamento"
+        string nome "Nome do Medicamento"
+        string tipo "Tipo (Medicamento/Diluente/Reconstituinte)"
+        int quantidade "Quantidade"
+    }
+
+    CLIENTES ||--o{ ANIMAIS : possui
+    ANIMAIS ||--o{ ATENDIMENTOS : recebe
+    ATENDIMENTOS ||--o{ VETERINARIOS : realizado_por
+    ATENDIMENTOS ||--o{ ATENDENTES : atendido_por
+    ATENDENTES ||--o{ AGENDA : agenda
+    ANIMAIS ||--o{ PAGAMENTOS : gera
+    ESTOQUE ||--o{ FARMACIA : possui
+    ANIMAIS ||--o{ FARMACIA : utiliza
+    ATENDIMENTOS ||--o{ PAGAMENTOS : associado_a
+```
+
+
+# 5. Diagrama de classe
 
 # 6. Casos de uso
 ## 6.1 Historias de usuario
