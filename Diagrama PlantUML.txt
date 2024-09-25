@@ -1,0 +1,79 @@
+@startuml
+
+class CLIENTES {
+    +string id
+    +string nome
+    +string cpf
+    +string telefone
+}
+
+class ANIMAIS {
+    +string id
+    +string nome
+    +string tipo
+    +string raca
+    +string condicoes
+    +string habitos
+    +string tipo_racao
+    +string carteira_vacinacao
+    +string prontuario
+}
+
+class VETERINARIOS {
+    +string id
+    +string nome
+    +string especialidade
+}
+
+class ATENDENTES {
+    +string id
+    +string nome
+}
+
+class ATENDIMENTOS {
+    +string id
+    +date data
+    +string resultado
+    +string receita
+    +string anotacoes
+    +string declaracao_comparecimento
+    +string prontuario
+}
+
+class AGENDA {
+    +string id
+    +date data
+    +string horario
+}
+
+class PAGAMENTOS {
+    +string id
+    +float valor
+    +string tipo
+    +string nota_fiscal
+}
+
+class ESTOQUE {
+    +string id
+    +string nome
+    +int quantidade
+}
+
+class FARMACIA {
+    +string id
+    +string nome
+    +string tipo
+    +int quantidade
+}
+
+CLIENTES "1" --o "0..*" ANIMAIS : possui
+ANIMAIS "1" --o "0..*" ATENDIMENTOS : recebe
+ATENDIMENTOS "1" --o "0..*" VETERINARIOS : realizado_por
+ATENDIMENTOS "1" --o "0..*" ATENDENTES : atendido_por
+ATENDENTES "1" --o "0..*" AGENDA : agenda
+ANIMAIS "1" --o "0..*" PAGAMENTOS : gera
+ESTOQUE "1" --o "0..*" FARMACIA : possui
+ANIMAIS "1" --o "0..*" FARMACIA : utiliza
+ATENDIMENTOS "1" --o "0..*" PAGAMENTOS : associado_a
+
+@enduml
