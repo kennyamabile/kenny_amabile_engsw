@@ -144,17 +144,8 @@ erDiagram
 # 5. Diagrama de classe
 
 # 6. Casos de uso
-## 6.1 Casos de Uso
 
-:bult: **Dica** Situações de utilização do sistema.
-
-!
-
-#6.2.1 História de usuario 1: Cadastro de Cliente 1: Cadastro de cliente
-
-#6.2.2 História de usuario 1: Cadastro de Cliente 2:
-
-
+ESTA NO VSCODE
 
 # 7. Diagrama de componentes
 
