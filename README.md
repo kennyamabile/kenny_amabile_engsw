@@ -1,22 +1,24 @@
 # Repositório da eng. de sw
 
-- [1. Descrição do sistema](#1-descrição-do-sistema)
+- [Repositório da eng. de sw](#repositório-da-eng-de-sw)
+- [1. Visão geral do problema](#1-visão-geral-do-problema)
 - [2. Descrição do negócio](#2-descrição-do-negócio)
-- [3. Visão geral do sistema.](#3-visão-geral-do-sistema)
+- [3. Visão geral do sistema](#3-visão-geral-do-sistema)
 - [4. Diagrama ER](#4-diagrama-er)
 - [5. Diagrama de classe](#5-diagrama-de-classe)
 - [6. Casos de uso](#6-casos-de-uso)
-  - [6.1 Histórias de usuário](#61-histórias-de-usuário)
 - [7. Diagrama de componentes](#7-diagrama-de-componentes)
 - [8. Diagrama de implantação](#8-diagrama-de-implantação)
 - [9. Protótipo de telas](#9-protótipo-de-telas)
 - [10. Diagrama de navegação de telas](#10-diagrama-de-navegação-de-telas)
-- [11. Pilha tecnológica](#11-pilha-tecnológica)
-- [12. Requisitos de sistemas](#12-requisitos-de-sistemas)
-- [13. Considerações sobre segurança](#13-considerações-sobre-segurança)
+- [11. Pilha tecnologica](#11-pilha-tecnologica)
+- [12. Requisitos de sistema](#12-requisitos-de-sistema)
+- [13. Consideraçôes sobre segurança](#13-consideraçôes-sobre-segurança)
 - [14. Manutenção e instalação](#14-manutenção-e-instalação)
 - [15. Glossário](#15-glossário)
 - [16. Script SQL](#16-script-sql)
+  - [16.1. Comandos CREATE table](#161-comandos-create-table)
+  - [16.2. Comandos INSERT table](#162-comandos-insert-table)
 
 # 1. Visão geral do problema
 
@@ -144,10 +146,7 @@ erDiagram
 
 
 # 6. Casos de uso
-
-
-
-ESTA NO VSCODE
+![caso de uso](https://raw.githubusercontent.com/kennyamabile/kenny_amabile_engsw/refs/heads/main/Diagrama%20sem%20nome.drawio.png?token=GHSAT0AAAAAACXTBXI3N77ZCZRY6I2LFY3UZXTMYIA)
 
 # 7. Diagrama de componentes
 
