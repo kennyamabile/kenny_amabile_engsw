@@ -140,10 +140,12 @@ erDiagram
     ATENDIMENTOS ||--o{ PAGAMENTOS : associado_a
 ```
 
-
 # 5. Diagrama de classe
 
+
 # 6. Casos de uso
+
+
 
 ESTA NO VSCODE
 
