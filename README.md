@@ -143,6 +143,7 @@ erDiagram
 ```
 
 # 5. Diagrama de classe
+```mermaid
 classDiagram
     %% Classes principais
     class Cliente {
