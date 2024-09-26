@@ -1,33 +1,44 @@
-# Repositório da eng. de sw
+# **Repositório de Engenharia de Software - Sistema para PetShop**
 
-- [1. Visão geral do problema](#1-visão-geral-do-problema)
-- [2. Descrição do negócio](#2-descrição-do-negócio)
-- [3. Visão geral do sistema](#3-visão-geral-do-sistema)
-- [4. Diagrama ER](#4-diagrama-er)
-- [5. Diagrama de classe](#5-diagrama-de-classe)
-- [6. Casos de uso](#6-casos-de-uso)
-    - [6.1. Casos de uso](#61-casos-de-uso)
-    - [6.2. História de usuário](#62-história-de-usuário)
-- [7. Diagrama de componentes](#7-diagrama-de-componentes)
-- [8. Diagrama de implantação](#8-diagrama-de-implantação)
-- [9. Protótipo de telas](#9-protótipo-de-telas)
-- [10. Diagrama de navegação de telas](#10-diagrama-de-navegação-de-telas)
-- [11. Pilha tecnologica](#11-pilha-tecnologica)
-- [12. Requisitos de sistema](#12-requisitos-de-sistema)
-- [13. Consideraçôes sobre segurança](#13-consideraçôes-sobre-segurança)
-- [14. Manutenção e instalação](#14-manutenção-e-instalação)
-- [15. Glossário](#15-glossário)
-- [16. Script SQL](#16-script-sql)
-  - [16.1. Comandos CREATE table](#161-comandos-create-table)
-  - [16.2. Comandos INSERT table](#162-comandos-insert-table)
+Este repositório documenta o desenvolvimento de um sistema exclusivo para uma clínica veterinária especializada em gatos e cachorros. O objetivo é otimizar o gerenciamento de consultas, prontuários, estoque e outros serviços essenciais para o atendimento animal.
 
-# 1. Visão geral do problema
+## **Índice**
 
-O projeto a seguir apresenta um sistema desenvolvido para um PetShop. A empresa é considerada micro e iniciou as atividades recentemente. Ao possuir serviços exclusivos, os sistemas presentes no mercado não se enquadra, desta forma, os proprietários decidiram desenvolver uma solução própria. Esta solução é detalhada a seguir:
+1. [Visão Geral do Problema](#1-visão-geral-do-problema)
+2. [Descrição do Negócio](#2-descrição-do-negócio)
+3. [Visão Geral do Sistema](#3-visão-geral-do-sistema)
+4. [Diagrama ER](#4-diagrama-er)
+5. [Diagrama de Classe](#5-diagrama-de-classe)
+6. [Casos de Uso](#6-casos-de-uso)  
+   - [6.1 Casos de Uso](#61-casos-de-uso)  
+   - [6.2 História de Usuário](#62-história-de-usuário)
+7. [Diagrama de Componentes](#7-diagrama-de-componentes)
+8. [Diagrama de Implantação](#8-diagrama-de-implantação)
+9. [Protótipo de Telas](#9-protótipo-de-telas)
+10. [Diagrama de Navegação de Telas](#10-diagrama-de-navegação-de-telas)
+11. [Pilha Tecnológica](#11-pilha-tecnologica)
+12. [Requisitos de Sistema](#12-requisitos-de-sistema)
+13. [Considerações sobre Segurança](#13-consideraçôes-sobre-segurança)
+14. [Manutenção e Instalação](#14-manutenção-e-instalação)
+15. [Glossário](#15-glossário)
+16. [Script SQL](#16-script-sql)  
+    - [16.1 Comandos CREATE Table](#161-comandos-create-table)  
+    - [16.2 Comandos INSERT Table](#162-comandos-insert-table)
+
+
+# **1. Visão Geral do Problema**
+
+O sistema é projetado para atender uma clínica veterinária de pequeno porte especializada em gatos e cachorros. O mercado não oferece soluções que atendam às necessidades específicas do negócio, e por isso, foi decidido o desenvolvimento de uma plataforma própria.
+
 
 # 2. Descrição do negócio
 
 Descrição do cenário onde o sistema deverá funcionar:
+
+# **Principais Funcionalidades do Sistema 🐾 🐾 🐾**
+
+> Abaixo estão listadas as principais funcionalidades e recursos do sistema desenvolvido para o gerenciamento completo de uma clínica veterinária especializada em gatos e cachorros.
+
 
 1. Marcar animais com RFID
 2. Uma clínica veterinária atende apenas os animais: gatos e cachorros.
@@ -459,7 +470,7 @@ classDiagram
 
 # 12. Requisitos de sistema
 
-# 13. Consideraçôes sobre segurança
+# 13. Consideração sobre segurança
 
 # 14. Manutenção e instalação
 
