@@ -35,7 +35,7 @@ O sistema é projetado para atender uma clínica veterinária de pequeno porte e
 
 Descrição do cenário onde o sistema deverá funcionar:
 
-# **Principais Funcionalidades do Sistema 🐾 🐾 🐾**
+# **🐾 Principais Funcionalidades do Sistema 🐾**
 
 > Abaixo estão listadas as principais funcionalidades e recursos do sistema desenvolvido para o gerenciamento completo de uma clínica veterinária especializada em gatos e cachorros.
 
