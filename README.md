@@ -1,12 +1,13 @@
 # Repositório da eng. de sw
 
-- [Repositório da eng. de sw](#repositório-da-eng-de-sw)
 - [1. Visão geral do problema](#1-visão-geral-do-problema)
 - [2. Descrição do negócio](#2-descrição-do-negócio)
 - [3. Visão geral do sistema](#3-visão-geral-do-sistema)
 - [4. Diagrama ER](#4-diagrama-er)
 - [5. Diagrama de classe](#5-diagrama-de-classe)
 - [6. Casos de uso](#6-casos-de-uso)
+    - [6.1. Casos de uso](#61-casos-de-uso)
+    - [6.2. História de usuário](#62-história-de-usuário)
 - [7. Diagrama de componentes](#7-diagrama-de-componentes)
 - [8. Diagrama de implantação](#8-diagrama-de-implantação)
 - [9. Protótipo de telas](#9-protótipo-de-telas)
@@ -26,7 +27,7 @@ O projeto a seguir apresenta um sistema desenvolvido para um PetShop. A empresa 
 
 # 2. Descrição do negócio
 
-Descrição do cenario onde o sistema deverá funcionar;
+Descrição do cenário onde o sistema deverá funcionar:
 
 1. Marcar animais com RFID
 2. Uma clínica veterinária atende apenas os animais: gatos e cachorros.
@@ -292,8 +293,159 @@ classDiagram
 
 ```
 # 6. Casos de uso
-![caso de uso](https://raw.githubusercontent.com/kennyamabile/kenny_amabile_engsw/refs/heads/main/Diagrama%20sem%20nome.drawio.png?token=GHSAT0AAAAAACXTBXI3N77ZCZRY6I2LFY3UZXTMYIA)
+  ## 6.1 Casos de uso
+![caso de uso](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/Diagrama%20caso%20de%20uso.png?raw=true)
 
+  ## 6.2 História de usuário
+### 1. Marcar animais com RFID
+**Como** um atendente,  
+**Eu quero** marcar cada animal com um código RFID,  
+**Para que** possamos rastrear e identificar os animais de forma eficiente.
+
+### 2. Atender apenas gatos e cachorros
+**Como** um gerente de clínica veterinária,  
+**Eu quero** garantir que a clínica atenda apenas gatos e cachorros,  
+**Para que** possamos especializar nossos serviços nesses tipos de animais.
+
+### 3. Cadastro de clientes e animais
+**Como** um cliente,  
+**Eu quero** cadastrar minhas informações pessoais e as informações do meu animal,  
+**Para que** o veterinário tenha todos os dados necessários para o atendimento.
+
+### 4. Informar condições do animal
+**Como** um cliente,  
+**Eu quero** informar as condições nas quais o meu animal chegou à clínica,  
+**Para que** o veterinário tenha um histórico preciso da condição de saúde do meu pet.
+
+### 5. Informar tipo de ração do animal
+**Como** um cliente,  
+**Eu quero** informar o tipo de ração que meu animal come,  
+**Para que** o veterinário tenha informações nutricionais relevantes.
+
+### 6. Informar hábitos do animal
+**Como** um cliente,  
+**Eu quero** informar os hábitos do meu animal,  
+**Para que** o veterinário possa considerar isso durante o diagnóstico e tratamento.
+
+### 7. Atendimento por vários veterinários
+**Como** um cliente,  
+**Eu quero** que o meu animal possa ser atendido por mais de um veterinário,  
+**Para que** ele receba cuidados de especialistas diferentes, conforme necessário.
+
+### 8. Agendamento de consultas
+**Como** um cliente,  
+**Eu quero** que o meu animal seja atendido de acordo com uma agenda definida,  
+**Para que** eu possa planejar o atendimento de forma eficiente.
+
+### 9. Ficha e prontuário para cada animal
+**Como** um veterinário,  
+**Eu quero** criar uma ficha e um prontuário para cada animal atendido,  
+**Para que** possamos registrar todas as informações relevantes sobre a saúde do animal.
+
+### 10. Agendamento de consultas futuras
+**Como** um cliente,  
+**Eu quero** poder marcar horários de atendimento futuros,  
+**Para que** eu garanta o atendimento em datas convenientes.
+
+### 11. Receita gerada no atendimento
+**Como** um veterinário,  
+**Eu quero** gerar uma receita ao final de cada atendimento,  
+**Para que** o cliente tenha as recomendações de medicamentos ou tratamentos necessários.
+
+### 12. Atendimento inicial pelo atendente
+**Como** um cliente,  
+**Eu quero** ser atendido por um atendente quando eu chegar à clínica,  
+**Para que** ele me oriente e inicie o processo de atendimento.
+
+### 13. Verificação de agenda pelo atendente
+**Como** um atendente,  
+**Eu quero** verificar se existe uma agenda disponível para o veterinário,  
+**Para que** eu possa organizar o atendimento do cliente e do animal.
+
+### 14. Colocar cliente na fila de espera
+**Como** um atendente,  
+**Eu quero** colocar o cliente e seu animal na fila de espera,  
+**Para que** eles sejam atendidos na ordem correta, se não houver agenda disponível.
+
+### 15. Levar cliente ao veterinário
+**Como** um atendente,  
+**Eu quero** levar o cliente e seu animal até o veterinário,  
+**Para que** eles possam iniciar a consulta.
+
+### 16. Realizar entrevista com o dono
+**Como** um veterinário,  
+**Eu quero** realizar uma entrevista com o dono do animal,  
+**Para que** eu tenha informações detalhadas para iniciar o exame.
+
+### 17. Resultado da entrevista em formulário
+**Como** um veterinário,  
+**Eu quero** registrar o resultado da entrevista em um formulário,  
+**Para que** as informações fiquem documentadas e disponíveis no prontuário.
+
+### 18. Exame do animal e anotações no prontuário
+**Como** um veterinário,  
+**Eu quero** examinar o animal e anotar as observações no prontuário,  
+**Para que** haja um registro completo do atendimento.
+
+### 19. Receita para o animal
+**Como** um veterinário,  
+**Eu quero** prescrever uma receita para o animal,  
+**Para que** ele receba os tratamentos ou medicamentos adequados.
+
+### 20. Pagamento de consultas e serviços
+**Como** um cliente,  
+**Eu quero** pagar minhas consultas e serviços diretamente na plataforma,  
+**Para que** eu tenha uma experiência integrada e simples, com a emissão de nota fiscal.
+
+### 21. Notificações automáticas de lembrete
+**Como** um cliente,  
+**Eu quero** receber notificações automáticas de lembrete para consultas agendadas,  
+**Para que** eu não perca o horário do atendimento.
+
+### 22. Histórico médico completo do animal
+**Como** um veterinário,  
+**Eu quero** acompanhar o histórico médico completo do animal,  
+**Para que** eu possa monitorar a saúde, vacinas, exames, cirurgias e medicações.
+
+### 23. Relatórios financeiros
+**Como** um gerente,  
+**Eu quero** gerar relatórios financeiros detalhados,  
+**Para que** eu possa acompanhar o desempenho financeiro da clínica.
+
+### 24. Controle de estoque de itens cirúrgicos
+**Como** um gerente,  
+**Eu quero** gerenciar o estoque de itens cirúrgicos,  
+**Para que** a clínica tenha sempre os materiais necessários para os procedimentos.
+
+### 25. Emissão de carteira de vacinação
+**Como** um veterinário,  
+**Eu quero** emitir uma carteira de vacinação para o animal,  
+**Para que** o dono tenha o controle das vacinas aplicadas.
+
+### 26. Emissão de declaração de comparecimento
+**Como** um atendente,  
+**Eu quero** emitir uma declaração de comparecimento para os tutores,  
+**Para que** eles possam justificar sua presença na clínica, se necessário.
+
+### 27. Prontuário eletrônico completo
+**Como** um veterinário,  
+**Eu quero** registrar o prontuário eletrônico com anamnese, receitas, evolução e alergias,  
+**Para que** o histórico de saúde do animal seja completo e acessível.
+
+### 28. Grid de classificação de risco dos pets
+**Como** um veterinário,  
+**Eu quero** visualizar um grid com a classificação de risco dos pets internados,  
+**Para que** possamos priorizar os cuidados de acordo com a urgência.
+
+### 29. Histórico de atendimentos
+**Como** um cliente,  
+**Eu quero** acessar o histórico completo dos atendimentos do meu animal,  
+**Para que** eu tenha um registro de todas as consultas e tratamentos.
+
+### 30. Módulo de farmácia
+**Como** um farmacêutico da clínica,  
+**Eu quero** gerenciar os medicamentos, diluentes e reconstituintes presentes na clínica,  
+**Para que** o estoque esteja sempre atualizado e os tratamentos sejam realizados sem interrupções.
 
 # 7. Diagrama de componentes
 
