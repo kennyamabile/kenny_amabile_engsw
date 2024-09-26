@@ -143,10 +143,156 @@ erDiagram
 ```
 
 # 5. Diagrama de classe
+classDiagram
+    %% Classes principais
+    class Cliente {
+        +int id
+        +string nome
+        +string endereco
+        +string telefone
+        +registrarAnimal()
+        +informarCondicoesAnimal()
+        +informarRacao()
+        +informarHabitos()
+    }
 
+    class Animal {
+        +int id
+        +string nome
+        +string especie
+        +string rfid
+        +string racao
+        +string habitos
+        +condicao chegada
+        +prontuario: Prontuario
+        +receberAtendimento()
+    }
 
+    class Gato {
+    }
+
+    class Cachorro {
+    }
+
+    class Veterinario {
+        +int id
+        +string nome
+        +realizarEntrevista()
+        +examinarAnimal()
+        +anotarObservacoes()
+        +prescreverReceita()
+    }
+
+    class Atendente {
+        +int id
+        +string nome
+        +verificarAgenda()
+        +colocarFilaEspera()
+        +levarClienteAoVeterinario()
+    }
+
+    class Agenda {
+        +int id
+        +string data
+        +verificarDisponibilidade()
+    }
+
+    class Atendimento {
+        +int id
+        +string data
+        +gerarReceita()
+    }
+
+    class Prontuario {
+        +string observacoes
+        +string evolucao
+        +string alergias
+        +string receitas
+        +anamnese()
+    }
+
+    class Receita {
+        +int id
+        +string descricao
+        +string medicamentos
+    }
+
+    class SistemaPagamento {
+        +processarPagamento()
+        +emitirNotaFiscal()
+    }
+
+    class Notificacao {
+        +enviarLembrete()
+    }
+
+    class RelatorioFinanceiro {
+        +gerarRelatorio()
+    }
+
+    class ControleEstoque {
+        +gerenciarEstoque()
+    }
+
+    class CarteiraVacinacao {
+        +emitirCarteira()
+    }
+
+    class DeclaracaoComparecimento {
+        +emitirDeclaracao()
+    }
+
+    class GridClassificacaoRisco {
+        +classificarRisco()
+    }
+
+    class ModuloFarmacia {
+        +gerenciarMedicamentos()
+    }
+
+    class HistoricoAtendimentos {
+        +consultarHistorico()
+    }
+
+    %% Relações
+    Cliente "1" -- "0..*" Animal : possui
+    Cliente "1" -- "0..*" Atendimento : realiza
+    Cliente "1" -- "0..*" Receita : recebe
+
+    Animal "1" -- "1" Prontuario : possui
+    Animal "1" -- "0..*" Veterinario : pode ser atendido por
+    Animal <|-- Gato
+    Animal <|-- Cachorro
+
+    Veterinario "1" -- "0..*" Atendimento : realiza
+
+    Atendimento "1" -- "1" Prontuario : gera
+    Atendimento "1" -- "1" Receita : gera
+    Atendimento "1" -- "1" Agenda : usa
+
+    Atendente "1" -- "0..*" Atendimento : gerencia
+    Atendente "1" -- "0..*" Agenda : verifica
+
+    Prontuario "1" -- "1" Anamnese : contém
+
+    SistemaPagamento "1" -- "0..*" Cliente : processa pagamento para
+
+    Notificacao "1" -- "0..*" Cliente : envia para
+
+    RelatorioFinanceiro "1" -- "0..*" Atendimento : consulta
+
+    ControleEstoque "1" -- "0..*" ModuloFarmacia : gerencia
+
+    CarteiraVacinacao "1" -- "1" Animal : emite para
+
+    DeclaracaoComparecimento "1" -- "0..*" Cliente : emite para
+
+    GridClassificacaoRisco "1" -- "0..*" Animal : classifica
+
+```
 # 6. Casos de uso
 ![caso de uso](https://raw.githubusercontent.com/kennyamabile/kenny_amabile_engsw/refs/heads/main/Diagrama%20sem%20nome.drawio.png?token=GHSAT0AAAAAACXTBXI3N77ZCZRY6I2LFY3UZXTMYIA)
+
 
 # 7. Diagrama de componentes
 
@@ -167,229 +313,183 @@ erDiagram
 # 15. Glossário
 
 # 16. Script SQL
-
-
 ## 16.1. Comandos CREATE table
 ```sql
-CREATE DATABASE IF NOT EXISTS ClinicaVeterinaria;
-USE ClinicaVeterinaria;
-
--- Tabela CLIENTE
-CREATE TABLE CLIENTE (
-    ID_Pessoa INT AUTO_INCREMENT PRIMARY KEY,
-    Nome VARCHAR(100) NOT NULL,
-    Telefone VARCHAR(15),
-    Endereco VARCHAR(255),
-    Email VARCHAR(100) UNIQUE NOT NULL
+-- Tabela ANIMAIS
+CREATE TABLE ANIMAIS (
+    id VARCHAR(50) PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    tipo VARCHAR(50) NOT NULL,  -- Removido o CHECK, já que MySQL ignora
+    raca VARCHAR(100),
+    condicoes VARCHAR(255),
+    habitos VARCHAR(255),
+    tipo_racao VARCHAR(100),
+    carteira_vacinacao VARCHAR(255),
+    prontuario VARCHAR(255),
+    cliente_id VARCHAR(50),
+    FOREIGN KEY (cliente_id) REFERENCES CLIENTES(id) ON DELETE CASCADE
 );
 
--- Tabela ANIMAL
-CREATE TABLE ANIMAL (
-    RFID VARCHAR(50) PRIMARY KEY,
-    Nome VARCHAR(100) NOT NULL,
-    Tipo ENUM('Gato', 'Cachorro', 'Ave', 'Jabuti', 'Iguana', 'Cobra', 'Furão') NOT NULL,
-    Habitos TEXT,
-    Condicao_chegada TEXT,
-    Tipo_racao VARCHAR(100),
-    ID_Pessoa INT,
-    FOREIGN KEY (ID_Pessoa) REFERENCES CLIENTE(ID_Pessoa)
+-- Tabela VETERINARIOS
+CREATE TABLE VETERINARIOS (
+    id VARCHAR(50) PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    especialidade VARCHAR(100)  -- Corrigido o tipo de dado
 );
 
--- Tabela VETERINARIO
-CREATE TABLE VETERINARIO (
-    ID_Veterinario INT AUTO_INCREMENT PRIMARY KEY,
-    Nome VARCHAR(100) NOT NULL,
-    CRMV VARCHAR(20) UNIQUE NOT NULL,
-    Especialidade VARCHAR(100)
+-- Tabela ATENDENTES
+CREATE TABLE ATENDENTES (
+    id VARCHAR(50) PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL
 );
 
--- Tabela ATENDENTE
-CREATE TABLE ATENDENTE (
-    ID_Atendente INT AUTO_INCREMENT PRIMARY KEY,
-    Nome VARCHAR(100) NOT NULL
-);
-
--- Tabela CONSULTA
-CREATE TABLE CONSULTA (
-    ID_Consulta INT AUTO_INCREMENT PRIMARY KEY,
-    Data DATE NOT NULL,
-    Hora TIME NOT NULL,
-    Descricao TEXT,
-    RFID VARCHAR(50),
-    ID_Veterinario INT,
-    ID_Atendente INT,
-    FOREIGN KEY (RFID) REFERENCES ANIMAL(RFID),
-    FOREIGN KEY (ID_Veterinario) REFERENCES VETERINARIO(ID_Veterinario),
-    FOREIGN KEY (ID_Atendente) REFERENCES ATENDENTE(ID_Atendente)
-);
-
--- Tabela FICHA
-CREATE TABLE FICHA (
-    ID_Ficha INT AUTO_INCREMENT PRIMARY KEY,
-    Descricao TEXT,
-    Observacoes TEXT,
-    RFID VARCHAR(50),
-    FOREIGN KEY (RFID) REFERENCES ANIMAL(RFID)
-);
-
--- Tabela PRONTUARIO
-CREATE TABLE PRONTUARIO (
-    ID_Prontuario INT AUTO_INCREMENT PRIMARY KEY,
-    Receita TEXT,
-    Observacoes TEXT,
-    RFID VARCHAR(50),
-    FOREIGN KEY (RFID) REFERENCES ANIMAL(RFID)
-);
-
--- Tabela SERVICO
-CREATE TABLE SERVICO (
-    ID_Servico INT AUTO_INCREMENT PRIMARY KEY,
-    Tipo ENUM('Banho', 'Tosa', 'Cirurgia', 'Injeção', 'Curativo', 'Pintura', 'Fisioterapia', 'Nutrição', 'Sobrepeso') NOT NULL,
-    Descricao TEXT,
-    Preco DECIMAL(10, 2)
+-- Tabela ATENDIMENTOS
+CREATE TABLE ATENDIMENTOS (
+    id VARCHAR(50) PRIMARY KEY,
+    data DATE NOT NULL,
+    resultado VARCHAR(255),
+    receita VARCHAR(255),
+    anotacoes VARCHAR(255),
+    declaracao_comparecimento VARCHAR(255),
+    prontuario VARCHAR(255),
+    animal_id VARCHAR(50),
+    veterinario_id VARCHAR(50),
+    atendente_id VARCHAR(50),
+    FOREIGN KEY (animal_id) REFERENCES ANIMAIS(id) ON DELETE CASCADE,
+    FOREIGN KEY (veterinario_id) REFERENCES VETERINARIOS(id) ON DELETE SET NULL,
+    FOREIGN KEY (atendente_id) REFERENCES ATENDENTES(id) ON DELETE SET NULL
 );
 
 -- Tabela AGENDA
 CREATE TABLE AGENDA (
-    ID_Agenda INT AUTO_INCREMENT PRIMARY KEY,
-    Data DATE NOT NULL,
-    Hora TIME NOT NULL,
-    RFID VARCHAR(50),
-    ID_Veterinario INT,
-    FOREIGN KEY (RFID) REFERENCES ANIMAL(RFID),
-    FOREIGN KEY (ID_Veterinario) REFERENCES VETERINARIO(ID_Veterinario)
+    id VARCHAR(50) PRIMARY KEY,
+    data DATE NOT NULL,
+    horario VARCHAR(5),
+    atendente_id VARCHAR(50),
+    FOREIGN KEY (atendente_id) REFERENCES ATENDENTES(id) ON DELETE CASCADE
 );
 
--- Tabela RECEITA
-CREATE TABLE RECEITA (
-    ID_Receita INT AUTO_INCREMENT PRIMARY KEY,
-    Medicamentos TEXT,
-    Instrucoes TEXT,
-    RFID VARCHAR(50),
-    FOREIGN KEY (RFID) REFERENCES ANIMAL(RFID)
+-- Tabela PAGAMENTOS
+CREATE TABLE PAGAMENTOS (
+    id VARCHAR(50) PRIMARY KEY,
+    valor FLOAT NOT NULL,
+    tipo VARCHAR(50) NOT NULL,  -- Removido o CHECK
+    nota_fiscal VARCHAR(255),
+    animal_id VARCHAR(50),
+    atendimento_id VARCHAR(50),
+    FOREIGN KEY (animal_id) REFERENCES ANIMAIS(id) ON DELETE CASCADE,
+    FOREIGN KEY (atendimento_id) REFERENCES ATENDIMENTOS(id) ON DELETE CASCADE
 );
 
--- Tabela NOTIFICACAO (para SMS e e-mail)
-CREATE TABLE NOTIFICACAO (
-    ID_Notificacao INT AUTO_INCREMENT PRIMARY KEY,
-    Tipo ENUM('SMS', 'Email') NOT NULL,
-    Mensagem TEXT,
-    Data DATE NOT NULL,
-    Hora TIME NOT NULL,
-    ID_Pessoa INT,
-    FOREIGN KEY (ID_Pessoa) REFERENCES CLIENTE(ID_Pessoa)
+-- Tabela ESTOQUE
+CREATE TABLE ESTOQUE (
+    id VARCHAR(50) PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    quantidade INT NOT NULL
 );
 
--- Tabela VACINACAO
-CREATE TABLE VACINACAO (
-    ID_Vacinacao INT AUTO_INCREMENT PRIMARY KEY,
-    Tipo_Vacina VARCHAR(100) NOT NULL,
-    Data DATE NOT NULL,
-    RFID VARCHAR(50),
-    FOREIGN KEY (RFID) REFERENCES ANIMAL(RFID)
-);
-
--- Tabela LEMBRETE_MEDICAMENTO
-CREATE TABLE LEMBRETE_MEDICAMENTO (
-    ID_Lembrete INT AUTO_INCREMENT PRIMARY KEY,
-    Medicamento VARCHAR(100),
-    Data_Lembrete DATE,
-    Confirmacao BOOLEAN,
-    RFID VARCHAR(50),
-    FOREIGN KEY (RFID) REFERENCES ANIMAL(RFID)
-);
-
--- Tabela RECOMENDACAO
-CREATE TABLE RECOMENDACAO (
-    ID_Recomendacao INT AUTO_INCREMENT PRIMARY KEY,
-    Racao_Recomendada VARCHAR(100),
-    Suplemento_Recomendado VARCHAR(100),
-    RFID VARCHAR(50),
-    FOREIGN KEY (RFID) REFERENCES ANIMAL(RFID)
+-- Tabela FARMACIA
+CREATE TABLE FARMACIA (
+    id VARCHAR(50) PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    tipo VARCHAR(50) NOT NULL,  -- Removido o CHECK
+    quantidade INT NOT NULL,
+    estoque_id VARCHAR(50),
+    FOREIGN KEY (estoque_id) REFERENCES ESTOQUE(id) ON DELETE CASCADE
 );
 ```
 
 ## 16.2. Comandos INSERT table
 
 ```sql
--- Inserir dados na tabela CLIENTE
-INSERT INTO CLIENTE (Nome, Telefone, Endereco, Email) VALUES
-('João da Silva', '1234-5678', 'Rua das Flores, 123', 'joao.silva@email.com'),
-('Maria Oliveira', '9876-5432', 'Avenida Central, 456', 'maria.oliveira@email.com'),
-('Carlos Pereira', '5555-6666', 'Praça da Liberdade, 789', 'carlos.pereira@email.com');
+-- Populando a tabela CLIENTES
+INSERT INTO CLIENTES (id, nome, cpf, telefone)
+VALUES 
+('C001', 'João Silva', '111.111.111-11', '11999999999'),
+('C002', 'Maria Souza', '222.222.222-22', '11988888888'),
+('C003', 'Carlos Lima', '333.333.333-33', '11977777777'),
+('C004', 'Ana Oliveira', '444.444.444-44', '11966666666'),
+('C005', 'Lucas Costa', '555.555.555-55', '11955555555'),
+('C006', 'Paula Ferreira', '666.666.666-66', '11944444444'),
+('C007', 'Marcos Pereira', '777.777.777-77', '11933333333'),
+('C008', 'Fernanda Alves', '888.888.888-88', '11922222222'),
+('C009', 'Ricardo Gomes', '999.999.999-99', '11911111111'),
+('C010', 'Julia Martins', '101.010.101-01', '11900000000');
 
--- Inserir dados na tabela ANIMAL
-INSERT INTO ANIMAL (RFID, Nome, Tipo, Habitos, Condicao_chegada, Tipo_racao, ID_Pessoa) VALUES
-('RFID001', 'Rex', 'Cachorro', 'Muito ativo', 'Machucado', 'Ração Premium', 1),
-('RFID002', 'Miau', 'Gato', 'Preguiçoso', 'Saudável', 'Ração Gourmet', 2),
-('RFID003', 'Pico', 'Ave', 'Cantor', 'Com febre', 'Ração para Aves', 3);
+-- Populando a tabela ANIMAIS
+INSERT INTO ANIMAIS (id, nome, tipo, raca, condicoes, habitos, tipo_racao, carteira_vacinacao, prontuario, cliente_id)
+VALUES 
+('A001', 'Rex', 'Cachorro', 'Pastor Alemão', 'Ferido na pata', 'Muito ativo', 'Ração Premium', 'Vacinas em dia', 'Sem alergias', 'C001'),
+('A002', 'Mia', 'Gato', 'Siamês', 'Febre', 'Dorminhoca', 'Ração Light', 'Vacinas em dia', 'Alergia a frango', 'C002'),
+('A003', 'Thor', 'Cachorro', 'Labrador', 'Desidratado', 'Adora brincar', 'Ração Standard', 'Vacinas atrasadas', 'Sem alergias', 'C003'),
+('A004', 'Bella', 'Gato', 'Persa', 'Infecção ocular', 'Calma', 'Ração Premium', 'Vacinas em dia', 'Sem alergias', 'C004'),
+('A005', 'Max', 'Cachorro', 'Bulldog', 'Problema respiratório', 'Preguiçoso', 'Ração Especial', 'Vacinas em dia', 'Alergia a glúten', 'C005'),
+('A006', 'Luna', 'Gato', 'Angorá', 'Vômito', 'Muito ativa', 'Ração Light', 'Vacinas em dia', 'Alergia a carne bovina', 'C006'),
+('A007', 'Toby', 'Cachorro', 'Beagle', 'Pulgas', 'Curioso', 'Ração Premium', 'Vacinas em dia', 'Sem alergias', 'C007'),
+('A008', 'Nina', 'Gato', 'Maine Coon', 'Problema renal', 'Muito tranquila', 'Ração Especial', 'Vacinas atrasadas', 'Sem alergias', 'C008'),
+('A009', 'Simba', 'Cachorro', 'Golden Retriever', 'Infecção no ouvido', 'Adora correr', 'Ração Standard', 'Vacinas em dia', 'Sem alergias', 'C009'),
+('A010', 'Chloe', 'Gato', 'Ragdoll', 'Alergia na pele', 'Muito carinhosa', 'Ração Premium', 'Vacinas em dia', 'Alergia a peixes', 'C010');
 
--- Inserir dados na tabela VETERINARIO
-INSERT INTO VETERINARIO (Nome, CRMV, Especialidade) VALUES
-('Dr. Pedro Almeida', 'CRMV-12345', 'Clínico Geral'),
-('Dra. Ana Costa', 'CRMV-67890', 'Especialista em Aves'),
-('Dr. Bruno Santos', 'CRMV-54321', 'Cirurgias');
+-- Populando a tabela VETERINARIOS
+INSERT INTO VETERINARIOS (id, nome, especialidade)
+VALUES 
+('V001', 'Dr. Fernando', 'Clínica Geral'),
+('V002', 'Dr. Camila', 'Dermatologia'),
+('V003', 'Dr. Pedro', 'Cardiologia'),
+('V004', 'Dra. Ana', 'Ortopedia'),
+('V005', 'Dr. Lucas', 'Endocrinologia'),
+('V006', 'Dra. Paula', 'Neurologia'),
+('V007', 'Dr. João', 'Oftalmologia'),
+('V008', 'Dra. Mariana', 'Oncologia'),
+('V009', 'Dr. Roberto', 'Nefrologia'),
+('V010', 'Dra. Clara', 'Gastroenterologia');
 
--- Inserir dados na tabela ATENDENTE
-INSERT INTO ATENDENTE (Nome) VALUES
-('Lucas Martins'),
-('Fernanda Lima');
+-- Populando a tabela ATENDENTES
+INSERT INTO ATENDENTES (id, nome)
+VALUES 
+('AT001', 'Alice'),
+('AT002', 'Bruno'),
+('AT003', 'Carla'),
+('AT004', 'Diego'),
+('AT005', 'Elisa'),
+('AT006', 'Felipe'),
+('AT007', 'Gabriela'),
+('AT008', 'Hugo'),
+('AT009', 'Isabela'),
+('AT010', 'João');
 
--- Inserir dados na tabela CONSULTA
-INSERT INTO CONSULTA (Data, Hora, Descricao, RFID, ID_Veterinario, ID_Atendente) VALUES
-('2024-09-20', '09:00:00', 'Exame de rotina', 'RFID001', 1, 1),
-('2024-09-21', '10:00:00', 'Vacinação', 'RFID002', 2, 2),
-('2024-09-22', '11:00:00', 'Tratamento de febre', 'RFID003', 1, 2);
+-- Populando a tabela ATENDIMENTOS
+INSERT INTO ATENDIMENTOS (id, data, resultado, receita, anotacoes, declaracao_comparecimento, prontuario, animal_id, veterinario_id, atendente_id)
+VALUES 
+('ATD001', '2024-09-01', 'Exame físico completo', 'Antibiótico', 'Animal estável', 'Declaração entregue', 'Sem novos sintomas', 'A001', 'V001', 'AT001'),
+('ATD002', '2024-09-02', 'Consulta de rotina', 'Ração especial', 'Alergia controlada', 'Declaração entregue', 'Animal em tratamento', 'A002', 'V002', 'AT002'),
+('ATD003', '2024-09-03', 'Tratamento de desidratação', 'Soro fisiológico', 'Animal se recuperando', 'Declaração entregue', 'Sem novos sintomas', 'A003', 'V003', 'AT003'),
+('ATD004', '2024-09-04', 'Infecção ocular tratada', 'Colírio', 'Animal estável', 'Declaração entregue', 'Sem novos sintomas', 'A004', 'V004', 'AT004'),
+('ATD005', '2024-09-05', 'Problema respiratório', 'Broncodilatador', 'Animal com dificuldade respiratória', 'Declaração entregue', 'Monitoramento contínuo', 'A005', 'V005', 'AT005'),
+('ATD006', '2024-09-06', 'Vômito persistente', 'Antiemético', 'Animal em observação', 'Declaração entregue', 'Sem novos sintomas', 'A006', 'V006', 'AT006'),
+('ATD007', '2024-09-07', 'Tratamento de pulgas', 'Antipulgas', 'Animal estável', 'Declaração entregue', 'Sem novos sintomas', 'A007', 'V007', 'AT007'),
+('ATD008', '2024-09-08', 'Problema renal tratado', 'Medicamento renal', 'Animal estável', 'Declaração entregue', 'Animal em recuperação', 'A008', 'V008', 'AT008'),
+('ATD009', '2024-09-09', 'Infecção no ouvido', 'Antibiótico', 'Animal estável', 'Declaração entregue', 'Animal se recuperando', 'A009', 'V009', 'AT009'),
+('ATD010', '2024-09-10', 'Alergia tratada', 'Corticosteroide', 'Animal sem sintomas', 'Declaração entregue', 'Monitoramento contínuo', 'A010', 'V010', 'AT010');
 
--- Inserir dados na tabela FICHA
-INSERT INTO FICHA (Descricao, Observacoes, RFID) VALUES
-('Ficha de exame de rotina', 'Tudo normal', 'RFID001'),
-('Ficha de vacinação', 'Vacinas em dia', 'RFID002'),
-('Ficha de tratamento', 'Precisa de cuidados adicionais', 'RFID003');
+-- Populando a tabela AGENDA
+INSERT INTO AGENDA (id, data, horario, atendente_id)
+VALUES 
+('AG001', '2024-09-01', '09:00', 'AT001'),
+('AG002', '2024-09-02', '10:00', 'AT002'),
+('AG003', '2024-09-03', '11:00', 'AT003'),
+('AG004', '2024-09-04', '12:00', 'AT004'),
+('AG005', '2024-09-05', '13:00', 'AT005'),
+('AG006', '2024-09-06', '14:00', 'AT006'),
+('AG007', '2024-09-07', '15:00', 'AT007'),
+('AG008', '2024-09-08', '16:00', 'AT008'),
+('AG009', '2024-09-09', '17:00', 'AT009'),
+('AG010', '2024-09-10', '18:00', 'AT010');
 
--- Inserir dados na tabela PRONTUARIO
-INSERT INTO PRONTUARIO (Receita, Observacoes, RFID) VALUES
-('Ração especial para recuperação', 'Reavaliar em 30 dias', 'RFID001'),
-('Vacina contra gripe', 'Manter acompanhamento', 'RFID002'),
-('Medicamento para febre', 'Monitorar temperatura', 'RFID003');
-
--- Inserir dados na tabela SERVICO
-INSERT INTO SERVICO (Tipo, Descricao, Preco) VALUES
-('Banho', 'Banho completo para cães e gatos', 50.00),
-('Tosa', 'Tosa completa para cães', 70.00),
-('Cirurgia', 'Cirurgia geral', 300.00),
-('Injeção', 'Aplicação de injeção', 40.00),
-('Curativo', 'Curativo em feridas', 30.00);
-
--- Inserir dados na tabela AGENDA
-INSERT INTO AGENDA (Data, Hora, RFID, ID_Veterinario) VALUES
-('2024-09-23', '08:00:00', 'RFID001', 1),
-('2024-09-24', '09:00:00', 'RFID002', 2),
-('2024-09-25', '10:00:00', 'RFID003', 3);
-
--- Inserir dados na tabela RECEITA
-INSERT INTO RECEITA (Medicamentos, Instrucoes, RFID) VALUES
-('Antibiótico X', 'Administrar 2 vezes ao dia', 'RFID001'),
-('Vacina Y', 'Aplicar uma dose', 'RFID002'),
-('Antipirético Z', 'Tomar a cada 8 horas', 'RFID003');
-
--- Inserir dados na tabela NOTIFICACAO
-INSERT INTO NOTIFICACAO (Tipo, Mensagem, Data, Hora, ID_Pessoa) VALUES
-('SMS', 'Lembrete: Consulta agendada para amanhã.', '2024-09-19', '10:00:00', 1),
-('Email', 'Seu animal precisa de uma revisão na próxima semana.', '2024-09-18', '09:00:00', 2);
-
--- Inserir dados na tabela VACINACAO
-INSERT INTO VACINACAO (Tipo_Vacina, Data, RFID) VALUES
-('Vacina contra gripe', '2024-09-20', 'RFID002'),
-('Vacina antirrábica', '2024-09-25', 'RFID001');
-
--- Inserir dados na tabela LEMBRETE_MEDICAMENTO
-INSERT INTO LEMBRETE_MEDICAMENTO (Medicamento, Data_Lembrete, Confirmacao, RFID) VALUES
-('Antibiótico X', '2024-09-22', FALSE, 'RFID001'),
-('Antipirético Z', '2024-09-23', FALSE, 'RFID003');
-
--- Inserir dados na tabela RECOMENDACAO
-INSERT INTO RECOMENDACAO (Racao_Recomendada, Suplemento_Recomendado, RFID) VALUES
-('Ração Premium', 'Suplemento Vitaminico A', 'RFID001'),
-('Ração Gourmet', 'Suplemento Mineral B', 'RFID002');
+-- Populando a tabela PAGAMENTOS
+INSERT INTO PAGAMENTOS (id, valor, tipo, nota_fiscal, animal_id, atendimento_id)
+VALUES 
+('PAG001', 150.00, 'Consulta', 'NF001', 'A001', 'ATD001'),
+('PAG002', 200.00, 'Serviço', 'NF002', 'A002', 'ATD002'),
+('PAG003', 180.00, 'Consulta', 'NF003', 'A003', 'ATD003'),
 ```
