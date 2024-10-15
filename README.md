@@ -465,6 +465,43 @@ classDiagram
 # 9. Protótipo de telas
 
 # 10. Diagrama de navegação de telas
+```mermaid
+graph TD;
+    A[Login] -->|Sucesso| B[Menu Principal]
+    A -->|Falha| C[Tela de Erro]
+
+    B --> D[Cadastro de Cliente]
+    B --> E[Cadastro de Animal]
+    B --> F[Agendar Consulta]
+    B --> G[Histórico Médico]
+    B --> H[Pagamento]
+    B --> I[Notificações]
+
+    D --> J[Confirmar Cadastro]
+    E --> K[Informar Condições]
+    E --> L[Informar Tipo de Ração]
+    E --> M[Informar Hábitos]
+    F --> N[Selecionar Veterinário]
+    F --> O[Ver Agenda]
+    F --> P[Fila de Espera]
+
+    N --> Q[Entrevista com Veterinário]
+    Q --> R[Preencher Formulário]
+    Q --> S[Examinar Animal]
+
+    R --> T[Gerar Prontuário]
+    S --> U[Emitir Receita]
+
+    G --> V[Histórico de Atendimentos]
+    G --> W[Relatórios Financeiros]
+    G --> X[Emissão de Carteira de Vacinação]
+    G --> Y[Emissão de Declaração de Comparecimento]
+
+    H --> Z[Pagar Consulta]
+    H --> AA[Emitir Nota Fiscal]
+
+    I --> AB[Notificações de Consultas]
+```
 
 # 11. Pilha tecnologica
 
