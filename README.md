@@ -581,14 +581,14 @@ Os sistemas focados no lado do servidor desempenham um papel crucial na arquitet
 
 ## 13.1. Lado cliente
 Regras para login
-    Captcha, quantidade minima de caracteres, caracteres especiais...
-    Autenticação 2FA;
-    Recuperação de senha com email; 
+-  Captcha, quantidade minima de caracteres, caracteres especiais...
+-  Autenticação 2FA;
+-  Recuperação de senha com email; 
 
 ## 13.2 Lado servidor
-Implementação de rotina de backup diario; 
-1x na semana realizar um full backup;
-O admin do sistema não pode acessar dados do cliente;
+- Implementação de rotina de backup diario; 
+- 1x na semana realizar um full backup;
+- O admin do sistema não pode acessar dados do cliente;
 
 # 14. Manutenção e instalação
 
