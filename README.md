@@ -465,6 +465,12 @@ classDiagram
 ![Diagrama de implantação](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/Implantacao.png?raw=true)
 
 # 9. Protótipo de telas
+![Tela de cadastro de animais](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/animais.png?raw=true)
+![Relatório de agendamentos](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/cadastros.png?raw=true)
+![Dashboard](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/dashboard.png?raw=true)
+![Controle do estoque](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/estoque.png?raw=true)
+![Listagem do estoque](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/estoque2.png?raw=true)
+
 
 # 10. Diagrama de navegação de telas
 ```mermaid
