@@ -515,9 +515,87 @@ graph TD;
 
 # 12. Requisitos de sistema
 
+## 12.1 Requisitos do lado do cliente 
+
+## 1. **Requisitos Funcionais**
+
+### 1.1. Interface do Usuário
+- **Design Responsivo**: Adaptar a interface a diferentes tamanhos de tela.
+- **Navegação Intuitiva**: Facilitar o acesso às funcionalidades.
+
+### 1.2. Autenticação
+- **Login/Logout**: Permitir que usuários acessem suas contas.
+- **Recuperação de Senha**: Facilitar a recuperação de senhas esquecidas.
+
+### 1.3. Interação com Dados
+- **Formulários Dinâmicos**: Permitir inserção e edição de dados pelo usuário.
+- **Exibição de Dados**: Apresentar informações de forma clara e organizada.
+
+### 1.4. Notificações
+- **Alertas**: Informar usuários sobre atualizações ou ações necessárias.
+
+## 2. **Requisitos Não Funcionais**
+
+### 2.1. Desempenho
+- **Tempo de Carregamento**: A interface deve carregar rapidamente.
+- **Responsividade**: As interações devem ser ágeis e fluidas.
+
+### 2.2. Segurança
+- **Criptografia de Dados**: Proteger informações sensíveis transmitidas.
+- **Validação de Entrada**: Evitar injeção de dados maliciosos.
+
+### 2.3. Acessibilidade
+- **Compatibilidade com Leitores de Tela**: Garantir que o conteúdo seja acessível a usuários com deficiência.
+
+## 12.2 Requisitos do lado do servidor 
+
+Os sistemas focados no lado do servidor desempenham um papel crucial na arquitetura de aplicações modernas. Eles gerenciam a lógica de negócios, o armazenamento de dados e a comunicação entre o cliente e o servidor. Neste documento, abordaremos os principais requisitos que devem ser considerados ao desenvolver sistemas baseados em servidor.
+
+## 1. **Requisitos Funcionais**
+
+Os requisitos funcionais descrevem as funcionalidades que o sistema deve oferecer. Alguns exemplos incluem:
+
+### 1.1. Autenticação e Autorização
+- **Registro de Usuários**: Permitir que novos usuários se registrem.
+- **Login**: Sistema de autenticação para acesso a áreas restritas.
+- **Controle de Acesso**: Definir permissões de usuários e papéis.
+
+### 1.2. Manipulação de Dados
+- **CRUD**: Implementação das operações de criar, ler, atualizar e deletar dados.
+- **Validação de Dados**: Garantir que os dados recebidos atendam aos critérios definidos.
+
+### 1.3. Processamento de Negócios
+- **Regras de Negócio**: Implementar regras que governam o funcionamento do sistema.
+- **Agendamento de Tarefas**: Permitir a execução de tarefas programadas.
+
+### 2.1. Desempenho
+- **Tempo de Resposta**: O sistema deve responder a solicitações em um tempo aceitável.
+- **Escalabilidade**: O sistema deve ser capaz de suportar um aumento no número de usuários sem degradação de desempenho.
+
+### 2.2. Segurança
+- **Criptografia**: Proteger dados sensíveis em trânsito e em repouso.
+- **Prevenção de Ataques**: Implementar medidas contra ataques comuns (ex: SQL Injection, XSS).
+
+### 2.3. Manutenibilidade
+- **Código Limpo e Documentado**: Manter o código legível e bem documentado para facilitar a manutenção.
+- **Testes Automatizados**: Implementar testes para garantir a estabilidade do sistema durante atualizações.
+
+### 2.4. Disponibilidade
+- **Redundância**: Ter sistemas de backup e recuperação para garantir a continuidade do serviço.
+- **Monitoramento**: Implementar ferramentas de monitoramento para identificar e corrigir falhas rapidamente.
 
 # 13. Consideração sobre segurança
 
+## 13.1. Lado cliente
+Regras para login
+    Captcha, quantidade minima de caracteres, caracteres especiais...
+    Autenticação 2FA;
+    Recuperação de senha com email; 
+
+## 13.2 Lado servidor
+Implementação de rotina de backup diario; 
+1x na semana realizar um full backup;
+O admin do sistema não pode acessar dados do cliente;
 
 # 14. Manutenção e instalação
 
