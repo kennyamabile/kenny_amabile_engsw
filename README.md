@@ -459,8 +459,10 @@ classDiagram
 **Para que** o estoque esteja sempre atualizado e os tratamentos sejam realizados sem interrupções.
 
 # 7. Diagrama de componentes
+![Diagrama de componentes](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/Componente.png?raw=true)
 
 # 8. Diagrama de implantação
+![Diagrama de implantação](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/Implantacao.png?raw=true)
 
 # 9. Protótipo de telas
 
@@ -507,7 +509,9 @@ graph TD;
 
 # 12. Requisitos de sistema
 
+
 # 13. Consideração sobre segurança
+
 
 # 14. Manutenção e instalação
 
