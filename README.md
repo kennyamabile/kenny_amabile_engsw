@@ -3,27 +3,26 @@
 Este repositório documenta o desenvolvimento de um sistema exclusivo para uma clínica veterinária especializada em gatos e cachorros. O objetivo é otimizar o gerenciamento de consultas, prontuários, estoque e outros serviços essenciais para o atendimento animal.
 
 ## **Índice**
-
 1. [Visão Geral do Problema](#1-visão-geral-do-problema)
 2. [Descrição do Negócio](#2-descrição-do-negócio)
 3. [Visão Geral do Sistema](#3-visão-geral-do-sistema)
 4. [Diagrama ER](#4-diagrama-er)
 5. [Diagrama de Classe](#5-diagrama-de-classe)
-6. [Casos de Uso](#6-casos-de-uso)  
-   - [6.1 Casos de Uso](#61-casos-de-uso)  
-   - [6.2 História de Usuário](#62-história-de-usuário)
+6. [Casos de Uso](#6-casos-de-uso)
 7. [Diagrama de Componentes](#7-diagrama-de-componentes)
 8. [Diagrama de Implantação](#8-diagrama-de-implantação)
 9. [Protótipo de Telas](#9-protótipo-de-telas)
 10. [Diagrama de Navegação de Telas](#10-diagrama-de-navegação-de-telas)
-11. [Pilha Tecnológica](#11-pilha-tecnologica)
+11. [Pilha Tecnológica](#11-pilha-tecnológica)
 12. [Requisitos de Sistema](#12-requisitos-de-sistema)
-13. [Considerações sobre Segurança](#13-consideraçôes-sobre-segurança)
+    - [12.1 Requisitos do Lado do Cliente](#121-requisitos-do-lado-do-cliente)
+    - [12.2 Requisitos do Lado do Servidor](#122-requisitos-do-lado-do-servidor)
+13. [Considerações sobre Segurança](#13-consideração-sobre-segurança)
+    - [13.1 Lado Cliente](#131-lado-cliente)
+    - [13.2 Lado Servidor](#132-lado-servidor)
 14. [Manutenção e Instalação](#14-manutenção-e-instalação)
-15. [Glossário](#15-glossário)
-16. [Script SQL](#16-script-sql)  
-    - [16.1 Comandos CREATE Table](#161-comandos-create-table)  
-    - [16.2 Comandos INSERT Table](#162-comandos-insert-table)
+15. [Treinamento](#15-treinamento)
+16. [Script SQL](#16-script-sql)
 
 
 # **1. Visão Geral do Problema**
@@ -72,6 +71,30 @@ Descrição do cenário onde o sistema deverá funcionar:
 30. Módulo de farmacia, constando medicamentos, diluentes e reconstituintes presentes na clínica.
 
 # 3. Visão geral do sistema
+1. **Cadastro de Usuário e Animais**: Registro de informações pessoais e dos animais (gatos e cachorros).
+
+2. **Informações de Saúde**: Possibilidade de informar condições de saúde, tipo de ração e hábitos do animal.
+
+3. **Agendamento e Atendimento**:
+   - Verificação de agenda disponível com veterinários.
+   - Fila de espera para atendimento, se necessário.
+
+4. **Entrevista com Veterinário**: Realização de entrevistas para entender melhor a situação do animal.
+
+5. **Prontuário Eletrônico**: Anotações de observações e histórico médico do animal.
+
+6. **Receitas Médicas**: Prescrição de medicamentos e tratamentos, com entrega de receita ao usuário.
+
+7. **Integração com Sistema de Pagamento**: Pagamento de consultas e serviços diretamente na plataforma, com emissão de notas fiscais eletrônicas.
+
+8. **Notificações Automáticas**: Lembretes sobre consultas agendadas.
+
+9. **Histórico Médico Completo**: Acompanhamento detalhado de saúde, vacinas, exames, cirurgias e medicações do animal.
+
+10. **Emissão de Documentos**: Emissão de carteiras de vacinação e declarações de comparecimento.
+
+11. **Módulo de Farmácia**: Acesso a medicamentos disponíveis na clínica.
+
 
 # 4. Diagrama ER
 ```mermaid
@@ -637,7 +660,16 @@ Regras para login
 - **Relatórios de Erros**: Permitir que usuários relatem problemas facilmente.
 - **Coleta de Feedback**: Sistema para coletar sugestões e melhorias.
 
-# 15. Glossário
+# 15. Treinamento
+Treinamento ao Vivo Online
+Caso solicitado, oferecemos a possibilidade de realizar um treinamento ao vivo de forma online. Para agendar essa sessão, basta entrar em contato diretamente com nosso atendimento ao cliente. É importante que você especifique o cargo do usuário que receberá o treinamento, pois isso nos permitirá personalizar o conteúdo de acordo com as necessidades específicas da sua função.
+
+O treinamento será realizado através da plataforma Google Meet, onde nossa equipe de suporte estará disponível para explicar detalhadamente o funcionamento dos módulos que o usuário deverá utilizar. Esta é uma excelente oportunidade para esclarecer dúvidas e entender melhor as funcionalidades da plataforma.
+
+Videos/Treinamento
+Além disso, queremos ressaltar que na página do desenvolvedor, você encontrará um compilado de vídeos de treinamento. Esses vídeos estão disponíveis para todos os usuários que possuem login no sistema, proporcionando acesso a recursos adicionais que podem complementar o aprendizado.
+
+Estamos à disposição para ajudá-lo a maximizar sua experiência com nossa plataforma!
 
 # 16. Script SQL
 ## 16.1. Comandos CREATE table
