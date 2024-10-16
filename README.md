@@ -516,8 +516,7 @@ graph TD;
 # 12. Requisitos de sistema
 
 ## 12.1 Requisitos do lado do cliente 
-
-## 1. **Requisitos Funcionais**
+Os sistemas focados no lado do cliente são essenciais para a experiência do usuário em aplicações modernas. Eles lidam com a interface do usuário, a interação com os dados e a apresentação das informações, garantindo que a navegação seja intuitiva e responsiva. Neste documento, abordaremos os principais requisitos que devem ser considerados ao desenvolver sistemas com foco no lado do cliente.
 
 ### 1.1. Interface do Usuário
 - **Design Responsivo**: Adaptar a interface a diferentes tamanhos de tela.
@@ -534,8 +533,6 @@ graph TD;
 ### 1.4. Notificações
 - **Alertas**: Informar usuários sobre atualizações ou ações necessárias.
 
-## 2. **Requisitos Não Funcionais**
-
 ### 2.1. Desempenho
 - **Tempo de Carregamento**: A interface deve carregar rapidamente.
 - **Responsividade**: As interações devem ser ágeis e fluidas.
@@ -550,10 +547,6 @@ graph TD;
 ## 12.2 Requisitos do lado do servidor 
 
 Os sistemas focados no lado do servidor desempenham um papel crucial na arquitetura de aplicações modernas. Eles gerenciam a lógica de negócios, o armazenamento de dados e a comunicação entre o cliente e o servidor. Neste documento, abordaremos os principais requisitos que devem ser considerados ao desenvolver sistemas baseados em servidor.
-
-## 1. **Requisitos Funcionais**
-
-Os requisitos funcionais descrevem as funcionalidades que o sistema deve oferecer. Alguns exemplos incluem:
 
 ### 1.1. Autenticação e Autorização
 - **Registro de Usuários**: Permitir que novos usuários se registrem.
@@ -599,6 +592,51 @@ O admin do sistema não pode acessar dados do cliente;
 
 # 14. Manutenção e instalação
 
+## 1. Instalação
+
+### 1.1. Requisitos de Sistema
+- **SO Suportados**: Windows, Linux e MacOS.
+- **Conexão de Internet**: A aplicação requer uma conexão de internet estável.
+
+### 1.2. Procedimento de Instalação
+1. **Download do Pacote**: O usuário deve baixar o pacote da aplicação.
+2. **Descompactação**: Extrair os arquivos em uma pasta de sua escolha.
+3. **Acesso à Aplicação**: Abrir o executavel do sistema instalado no computador.
+
+### 1.3. Configuração Inicial
+- **Configurações de Usuário**: Permitir que o usuário configure suas preferências ao iniciar a aplicação pela primeira vez.
+
+## 2. Funcionalidades
+
+### 2.1. Interface do Usuário
+- **Design Responsivo**: Adaptação automática a diferentes tamanhos de tela.
+- **Navegação Intuitiva**: Estrutura clara e menus de fácil acesso.
+
+### 2.2. Autenticação
+- **Login e Registro**: Formulários para criação de conta e acesso ao sistema.
+- **Recuperação de Senha**: Processo para redefinir senhas esquecidas.
+
+### 2.3. Manipulação de Dados
+- **CRUD**: Permitir aos usuários criar, ler, atualizar e deletar informações.
+- **Validação de Dados**: Garantir que os dados inseridos atendam aos critérios estabelecidos.
+
+### 2.4. Notificações
+- **Alertas em Tempo Real**: Informar usuários sobre atualizações ou eventos importantes.
+
+## 3. Manutenção
+
+### 3.1. Atualizações de Sistema
+- **Verificação de Versão**: O sistema deve checar automaticamente se há atualizações disponíveis.
+- **Processo de Atualização**: Instruções claras sobre como atualizar a aplicação.
+
+### 3.2. Suporte Técnico
+- **Documentação de Ajuda**: Disponibilizar uma seção de FAQ e guias de uso.
+- **Contato com Suporte**: Informações sobre como contatar a equipe de suporte.
+
+### 3.3. Monitoramento e Feedback
+- **Relatórios de Erros**: Permitir que usuários relatem problemas facilmente.
+- **Coleta de Feedback**: Sistema para coletar sugestões e melhorias.
+
 # 15. Glossário
 
 # 16. Script SQL
@@ -608,7 +646,7 @@ O admin do sistema não pode acessar dados do cliente;
 CREATE TABLE ANIMAIS (
     id VARCHAR(50) PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
-    tipo VARCHAR(50) NOT NULL,  -- Removido o CHECK, já que MySQL ignora
+    tipo VARCHAR(50) NOT NULL, 
     raca VARCHAR(100),
     condicoes VARCHAR(255),
     habitos VARCHAR(255),
@@ -623,7 +661,7 @@ CREATE TABLE ANIMAIS (
 CREATE TABLE VETERINARIOS (
     id VARCHAR(50) PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
-    especialidade VARCHAR(100)  -- Corrigido o tipo de dado
+    especialidade VARCHAR(100) 
 );
 
 -- Tabela ATENDENTES
@@ -662,7 +700,7 @@ CREATE TABLE AGENDA (
 CREATE TABLE PAGAMENTOS (
     id VARCHAR(50) PRIMARY KEY,
     valor FLOAT NOT NULL,
-    tipo VARCHAR(50) NOT NULL,  -- Removido o CHECK
+    tipo VARCHAR(50) NOT NULL,  
     nota_fiscal VARCHAR(255),
     animal_id VARCHAR(50),
     atendimento_id VARCHAR(50),
@@ -681,7 +719,7 @@ CREATE TABLE ESTOQUE (
 CREATE TABLE FARMACIA (
     id VARCHAR(50) PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
-    tipo VARCHAR(50) NOT NULL,  -- Removido o CHECK
+    tipo VARCHAR(50) NOT NULL,  
     quantidade INT NOT NULL,
     estoque_id VARCHAR(50),
     FOREIGN KEY (estoque_id) REFERENCES ESTOQUE(id) ON DELETE CASCADE
