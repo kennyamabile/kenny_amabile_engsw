@@ -535,6 +535,7 @@ graph TD;
 ```
 
 # 11. Pilha tecnologica
+![Pilha tecnologica](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/item11.png?raw=true)
 
 # 12. Requisitos de sistema
 
