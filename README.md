@@ -540,66 +540,71 @@ graph TD;
 # 12. Requisitos de sistema
 
 ## 12.1 Requisitos do lado do cliente 
-Os sistemas focados no lado do cliente são essenciais para a experiência do usuário em aplicações modernas. Eles lidam com a interface do usuário, a interação com os dados e a apresentação das informações, garantindo que a navegação seja intuitiva e responsiva. Neste documento, abordaremos os principais requisitos que devem ser considerados ao desenvolver sistemas com foco no lado do cliente.
 
-### 1.1. Interface do Usuário
-- **Design Responsivo**: Adaptar a interface a diferentes tamanhos de tela.
-- **Navegação Intuitiva**: Facilitar o acesso às funcionalidades.
+### 1. Requisitos de Hardware
+- **Processador**: Mínimo de [especificar modelo e velocidade, por exemplo, Intel i3 ou equivalente].
+- **Memória RAM**: Mínimo de 4gb.
+- **Espaço em Disco**: Mínimo de  10 gb de espaço livre no disco rígido.
+- **Placa de Vídeo**: Compatível com  DirectX 11 ou OpenGL 3.3.
 
-### 1.2. Autenticação
-- **Login/Logout**: Permitir que usuários acessem suas contas.
-- **Recuperação de Senha**: Facilitar a recuperação de senhas esquecidas.
+### 2. Requisitos de Sistema Operacional
+- **Windows**: Versões suportadas:  Windows 10 ou superior.
+- **macOS**: Versões suportadas: macOS Mojave ou superior.
+- **Linux**: Distribuições suportadas: Ubuntu 20.04 ou superior.
 
-### 1.3. Interação com Dados
-- **Formulários Dinâmicos**: Permitir inserção e edição de dados pelo usuário.
-- **Exibição de Dados**: Apresentar informações de forma clara e organizada.
+### 3. Requisitos de Navegador
+- **Habilitação de Cookies**: O navegador deve permitir cookies.
+- **JavaScript**: O JavaScript deve estar habilitado.
 
-### 1.4. Notificações
-- **Alertas**: Informar usuários sobre atualizações ou ações necessárias.
+### 4. Requisitos de Rede
+- **Conexão à Internet**: Conexão de banda larga estável (recomenda-se velocidade mínima de 1 Mbps).
+- **Firewall/Antivírus**: O software deve ser configurado para permitir o acesso à internet, desativando restrições que impeçam a comunicação.
 
-### 1.5. Desempenho
-- **Tempo de Carregamento**: A interface deve carregar rapidamente.
-- **Responsividade**: As interações devem ser ágeis e fluidas.
+### 5. Requisitos de Software
+- **Atualizações**: O sistema deve estar atualizado com os últimos patches de segurança e atualizações do sistema operacional.
 
-### 1.6. Segurança
-- **Criptografia de Dados**: Proteger informações sensíveis transmitidas.
-- **Validação de Entrada**: Evitar injeção de dados maliciosos.
+### 6. Requisitos de Acessibilidade
+- **Recursos de Acessibilidade**: Deve ser compatível com recursos de acessibilidade do sistema operacional 
 
-### 1.7. Acessibilidade
-- **Compatibilidade com Leitores de Tela**: Garantir que o conteúdo seja acessível a usuários com deficiência.
+### 7. Outros Requisitos
+- **Permissões de Usuário**: O usuário deve ter permissões de admin adequadas para instalar o software.
 
 ## 12.2 Requisitos do lado do servidor 
 
-Os sistemas focados no lado do servidor desempenham um papel crucial na arquitetura de aplicações modernas. Eles gerenciam a lógica de negócios, o armazenamento de dados e a comunicação entre o cliente e o servidor. Neste documento, abordaremos os principais requisitos que devem ser considerados ao desenvolver sistemas baseados em servidor.
+### 1. Requisitos de Hardware
+- **Processador**: Mínimo de Intel Xeon E5 ou equivalente.
+- **Memória RAM**: Mínimo de 16 GB.
+- **Espaço em Disco**: Mínimo de 100 GB de espaço livre no disco rígido.
+- **Placa de Rede**: Compatível com conexões Ethernet de alta velocidade.
 
-### 1.1. Autenticação e Autorização
-- **Registro de Usuários**: Permitir que novos usuários se registrem.
-- **Login**: Sistema de autenticação para acesso a áreas restritas.
-- **Controle de Acesso**: Definir permissões de usuários e papéis.
+### 2. Requisitos de Sistema Operacional
+- **Windows Server**: Versões suportadas: Windows Server 2019 ou superior.
+- **Linux**: Distribuições suportadas: Ubuntu Server 20.04, CentOS 8, Debian 10.
+- **Virtualização**: Suporte para ambientes virtuais como VMware e Hyper-V.
 
-### 1.2. Manipulação de Dados
-- **CRUD**: Implementação das operações de criar, ler, atualizar e deletar dados.
-- **Validação de Dados**: Garantir que os dados recebidos atendam aos critérios definidos.
+### 3. Requisitos de Software
+- **Servidor Web**: Instalação de servidores web como Apache ou Nginx.
+- **Banco de Dados**: Sistemas de gerenciamento de banco de dados suportados: MySQL e PostgreSQL.
+- **Ambiente de Execução**: Java JDK 11 e Node.js.
+- **Dependências Adicionais**: Bibliotecas de suporte, como Redis ou Memcached.
 
-### 1.3. Processamento de Negócios
-- **Regras de Negócio**: Implementar regras que governam o funcionamento do sistema.
-- **Agendamento de Tarefas**: Permitir a execução de tarefas programadas.
+### 4. Requisitos de Rede
+- **Conexão à Internet**: Conexão de banda larga estável com IP estático.
+- **Firewall**: Configuração adequada para permitir tráfego nas portas 80 e 443 para HTTP/HTTPS.
+- **Segurança de Rede**: Implementação de VPN para acesso remoto seguro.
 
-### 1.4. Desempenho
-- **Tempo de Resposta**: O sistema deve responder a solicitações em um tempo aceitável.
-- **Escalabilidade**: O sistema deve ser capaz de suportar um aumento no número de usuários sem degradação de desempenho.
+### 5. Requisitos de Desempenho
+- **Capacidade de Carga**: O servidor deve ser capaz de suportar um número mínimo de 200 conexões simultâneas.
+- **Backup e Redundância**: Estratégias de backup regulares e soluções de redundância para garantir alta disponibilidade.
 
-### 1.5. Segurança
-- **Criptografia**: Proteger dados sensíveis em trânsito e em repouso.
-- **Prevenção de Ataques**: Implementar medidas contra ataques comuns (ex: SQL Injection, XSS).
+### 6. Requisitos de Segurança
+- **Criptografia**: Implementação de HTTPS para comunicação segura.
+- **Autenticação**: Métodos de autenticação robustos, como autenticação multifator.
+- **Atualizações de Segurança**: Manutenção regular de atualizações e patches de segurança.
 
-### 1.6. Manutenibilidade
-- **Código Limpo e Documentado**: Manter o código legível e bem documentado para facilitar a manutenção.
-- **Testes Automatizados**: Implementar testes para garantir a estabilidade do sistema durante atualizações.
-
-### 1.7. Disponibilidade
-- **Redundância**: Ter sistemas de backup e recuperação para garantir a continuidade do serviço.
-- **Monitoramento**: Implementar ferramentas de monitoramento para identificar e corrigir falhas rapidamente.
+### 7. Monitoramento e Manutenção
+- **Ferramentas de Monitoramento**: Implementação de ferramentas para monitoramento de desempenho e logs, como Prometheus e Grafana.
+- **Procedimentos de Manutenção**: Planos para manutenção regular do servidor e atualizações de software.
 
 # 13. Consideração sobre segurança
 
@@ -669,8 +674,6 @@ O treinamento será realizado através da plataforma Google Meet, onde nossa equ
 
 Videos/Treinamento
 Além disso, queremos ressaltar que na página do desenvolvedor, você encontrará um compilado de vídeos de treinamento. Esses vídeos estão disponíveis para todos os usuários que possuem login no sistema, proporcionando acesso a recursos adicionais que podem complementar o aprendizado.
-
-Estamos à disposição para ajudá-lo a maximizar sua experiência com nossa plataforma!
 
 # 16. Script SQL
 ## 16.1. Comandos CREATE table
