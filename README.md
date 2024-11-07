@@ -142,6 +142,7 @@ Descrição do cenário onde o sistema deverá funcionar:
 29. Histórico de atendimentos.
 30. Módulo de farmacia, constando medicamentos, diluentes e reconstituintes presentes na clínica.
 
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 ## 2.1 Requisitos
 
 ### Requisitos Funcionais e Não Funcionais
@@ -187,8 +188,8 @@ Descrição do cenário onde o sistema deverá funcionar:
 | **Não Funcional** | 8. O sistema deve garantir alta disponibilidade (99,9% de uptime) e ser resiliente a falhas                 |
 | **Não Funcional** | 9. O sistema deve ter integração com sistemas externos, como plataformas de pagamento e sistemas de estoque |
 | **Não Funcional** | 10. O sistema deve ser auditável e registrar todas as ações feitas pelos usuários para fins de segurança    |
-[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 # 3. Visão geral do sistema
 1. **Cadastro de Usuário e Animais**: Registro de informações pessoais e dos animais (gatos e cachorros).
 
@@ -215,7 +216,6 @@ Descrição do cenário onde o sistema deverá funcionar:
 11. **Módulo de Farmácia**: Acesso a medicamentos disponíveis na clínica.
 
 [Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
-
 # 4. Diagrama ER
 ```mermaid
 erDiagram
@@ -296,8 +296,8 @@ erDiagram
     ANIMAIS ||--o{ FARMACIA : utiliza
     ATENDIMENTOS ||--o{ PAGAMENTOS : associado_a
 ```
-[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 # 5. Diagrama de classe
 ```mermaid
 classDiagram
@@ -447,8 +447,8 @@ classDiagram
     GridClassificacaoRisco "1" -- "0..*" Animal : classifica
 
 ```
-[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 # 6. Casos de uso
   ## 6.1 Casos de uso
 ![caso de uso](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/Diagrama%20caso%20de%20uso.png?raw=true)
@@ -603,16 +603,16 @@ classDiagram
 **Como** um farmacêutico da clínica,  
 **Eu quero** gerenciar os medicamentos, diluentes e reconstituintes presentes na clínica,  
 **Para que** o estoque esteja sempre atualizado e os tratamentos sejam realizados sem interrupções.
-[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 # 7. Diagrama de componentes
 ![Diagrama de componentes](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/Componente.png?raw=true)
-[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 # 8. Diagrama de implantação
 ![Diagrama de implantação](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/Implantacao.png?raw=true)
-[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 # 9. Diagrama C4
 
 ## 9.1 Diagrama de contexto
@@ -794,7 +794,6 @@ graph TD
 ```
 
 [Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
-
 # 10. Protótipo de telas
 ![Tela de cadastro de animais](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/animais.png?raw=true)
 ![Relatório de agendamentos](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/cadastros.png?raw=true)
@@ -842,8 +841,8 @@ graph TD;
 
     I --> AB[Notificações de Consultas]
 ```
-[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 # 12. Pilha tecnologica
 ![Pilha tecnologica](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/item11.png?raw=true)
 
@@ -915,8 +914,8 @@ graph TD;
 ### 7. Monitoramento e Manutenção
 - **Ferramentas de Monitoramento**: Implementação de ferramentas para monitoramento de desempenho e logs, como Prometheus e Grafana.
 - **Procedimentos de Manutenção**: Planos para manutenção regular do servidor e atualizações de software.
+  
 [Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
-
 # 14. Consideração sobre segurança
 ## 14.1. Lado cliente
 Regras para login
@@ -929,6 +928,7 @@ Regras para login
 - 1x na semana realizar um full backup;
 - O admin do sistema não pode acessar dados do cliente;
 
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 # 15. Manutenção e instalação
 
 ## 1. Instalação
@@ -976,6 +976,7 @@ Regras para login
 - **Relatórios de Erros**: Permitir que usuários relatem problemas facilmente.
 - **Coleta de Feedback**: Sistema para coletar sugestões e melhorias.
 
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 # 16. Treinamento
 Treinamento ao Vivo Online
 Caso solicitado, oferecemos a possibilidade de realizar um treinamento ao vivo de forma online. Para agendar essa sessão, basta entrar em contato diretamente com nosso atendimento ao cliente. É importante que você especifique o cargo do usuário que receberá o treinamento, pois isso nos permitirá personalizar o conteúdo de acordo com as necessidades específicas da sua função.
@@ -985,6 +986,7 @@ O treinamento será realizado através da plataforma Google Meet, onde nossa equ
 Videos/Treinamento
 Além disso, queremos ressaltar que na página do desenvolvedor, você encontrará um compilado de vídeos de treinamento. Esses vídeos estão disponíveis para todos os usuários que possuem login no sistema, proporcionando acesso a recursos adicionais que podem complementar o aprendizado.
 
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 # 17. Script SQL
 ## 17.1. Comandos CREATE table
 ```sql
@@ -1166,3 +1168,5 @@ VALUES
 ('PAG002', 200.00, 'Serviço', 'NF002', 'A002', 'ATD002'),
 ('PAG003', 180.00, 'Consulta', 'NF003', 'A003', 'ATD003'),
 ```
+
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
