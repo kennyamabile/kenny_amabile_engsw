@@ -142,7 +142,7 @@ Descrição do cenário onde o sistema deverá funcionar:
 29. Histórico de atendimentos.
 30. Módulo de farmacia, constando medicamentos, diluentes e reconstituintes presentes na clínica.
 
-[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
+ [Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 ## 2.1 Requisitos
 
 ### Requisitos Funcionais e Não Funcionais
@@ -189,7 +189,7 @@ Descrição do cenário onde o sistema deverá funcionar:
 | **Não Funcional** | 9. O sistema deve ter integração com sistemas externos, como plataformas de pagamento e sistemas de estoque |
 | **Não Funcional** | 10. O sistema deve ser auditável e registrar todas as ações feitas pelos usuários para fins de segurança    |
 
-[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
+ [Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 # 3. Visão geral do sistema
 1. **Cadastro de Usuário e Animais**: Registro de informações pessoais e dos animais (gatos e cachorros).
 
@@ -802,7 +802,6 @@ graph TD
 ![Listagem do estoque](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/estoque2.png?raw=true)
 
 [Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
-
 # 11. Diagrama de navegação de telas
 ```mermaid
 graph TD;
