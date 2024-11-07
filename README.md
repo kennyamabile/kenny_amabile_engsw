@@ -3,33 +3,105 @@
 Este repositório documenta o desenvolvimento de um sistema exclusivo para uma clínica veterinária especializada em gatos e cachorros. O objetivo é otimizar o gerenciamento de consultas, prontuários, estoque e outros serviços essenciais para o atendimento animal.
 
 ## **Índice**
-1. [Visão Geral do Problema](#1-visão-geral-do-problema)
-2. [Descrição do Negócio](#2-descrição-do-negócio)
-3. [Visão Geral do Sistema](#3-visão-geral-do-sistema)
-4. [Diagrama ER](#4-diagrama-er)
-5. [Diagrama de Classe](#5-diagrama-de-classe)
-6. [Casos de Uso](#6-casos-de-uso)
-7. [Diagrama de Componentes](#7-diagrama-de-componentes)
-8. [Diagrama de Implantação](#8-diagrama-de-implantação)
-9. [Protótipo de Telas](#9-protótipo-de-telas)
-10. [Diagrama de Navegação de Telas](#10-diagrama-de-navegação-de-telas)
-11. [Pilha Tecnológica](#11-pilha-tecnológica)
-12. [Requisitos de Sistema](#12-requisitos-de-sistema)
-    - [12.1 Requisitos do Lado do Cliente](#121-requisitos-do-lado-do-cliente)
-    - [12.2 Requisitos do Lado do Servidor](#122-requisitos-do-lado-do-servidor)
-13. [Considerações sobre Segurança](#13-consideração-sobre-segurança)
-    - [13.1 Lado Cliente](#131-lado-cliente)
-    - [13.2 Lado Servidor](#132-lado-servidor)
-14. [Manutenção e Instalação](#14-manutenção-e-instalação)
-15. [Treinamento](#15-treinamento)
-16. [Script SQL](#16-script-sql)
+- [**Repositório de Engenharia de Software - Sistema para PetShop**](#repositório-de-engenharia-de-software---sistema-para-petshop)
+  - [**Índice**](#índice)
+- [**1. Visão Geral do Problema**](#1-visão-geral-do-problema)
+- [2. Descrição do negócio](#2-descrição-do-negócio)
+- [**🐾 Principais Funcionalidades do Sistema 🐾**](#-principais-funcionalidades-do-sistema-)
+  - [2.1 Requisitos](#21-requisitos)
+    - [Requisitos Funcionais e Não Funcionais](#requisitos-funcionais-e-não-funcionais)
+- [3. Visão geral do sistema](#3-visão-geral-do-sistema)
+- [4. Diagrama ER](#4-diagrama-er)
+- [5. Diagrama de classe](#5-diagrama-de-classe)
+- [6. Casos de uso](#6-casos-de-uso)
+  - [6.1 Casos de uso](#61-casos-de-uso)
+  - [6.2 História de usuário](#62-história-de-usuário)
+    - [1. Marcar animais com RFID](#1-marcar-animais-com-rfid)
+    - [2. Atender apenas gatos e cachorros](#2-atender-apenas-gatos-e-cachorros)
+    - [3. Cadastro de clientes e animais](#3-cadastro-de-clientes-e-animais)
+    - [4. Informar condições do animal](#4-informar-condições-do-animal)
+    - [5. Informar tipo de ração do animal](#5-informar-tipo-de-ração-do-animal)
+    - [6. Informar hábitos do animal](#6-informar-hábitos-do-animal)
+    - [7. Atendimento por vários veterinários](#7-atendimento-por-vários-veterinários)
+    - [8. Agendamento de consultas](#8-agendamento-de-consultas)
+    - [9. Ficha e prontuário para cada animal](#9-ficha-e-prontuário-para-cada-animal)
+    - [10. Agendamento de consultas futuras](#10-agendamento-de-consultas-futuras)
+    - [11. Receita gerada no atendimento](#11-receita-gerada-no-atendimento)
+    - [12. Atendimento inicial pelo atendente](#12-atendimento-inicial-pelo-atendente)
+    - [13. Verificação de agenda pelo atendente](#13-verificação-de-agenda-pelo-atendente)
+    - [14. Colocar cliente na fila de espera](#14-colocar-cliente-na-fila-de-espera)
+    - [15. Levar cliente ao veterinário](#15-levar-cliente-ao-veterinário)
+    - [16. Realizar entrevista com o dono](#16-realizar-entrevista-com-o-dono)
+    - [17. Resultado da entrevista em formulário](#17-resultado-da-entrevista-em-formulário)
+    - [18. Exame do animal e anotações no prontuário](#18-exame-do-animal-e-anotações-no-prontuário)
+    - [19. Receita para o animal](#19-receita-para-o-animal)
+    - [20. Pagamento de consultas e serviços](#20-pagamento-de-consultas-e-serviços)
+    - [21. Notificações automáticas de lembrete](#21-notificações-automáticas-de-lembrete)
+    - [22. Histórico médico completo do animal](#22-histórico-médico-completo-do-animal)
+    - [23. Relatórios financeiros](#23-relatórios-financeiros)
+    - [24. Controle de estoque de itens cirúrgicos](#24-controle-de-estoque-de-itens-cirúrgicos)
+    - [25. Emissão de carteira de vacinação](#25-emissão-de-carteira-de-vacinação)
+    - [26. Emissão de declaração de comparecimento](#26-emissão-de-declaração-de-comparecimento)
+    - [27. Prontuário eletrônico completo](#27-prontuário-eletrônico-completo)
+    - [28. Grid de classificação de risco dos pets](#28-grid-de-classificação-de-risco-dos-pets)
+    - [29. Histórico de atendimentos](#29-histórico-de-atendimentos)
+    - [30. Módulo de farmácia](#30-módulo-de-farmácia)
+- [7. Diagrama de componentes](#7-diagrama-de-componentes)
+- [8. Diagrama de implantação](#8-diagrama-de-implantação)
+- [9. Diagrama C4](#9-diagrama-c4)
+  - [9.1 Diagrama de contexto](#91-diagrama-de-contexto)
+  - [9.2 Diagrama de container](#92-diagrama-de-container)
+  - [9.3 Diagrama de componentes](#93-diagrama-de-componentes)
+  - [9.4 Diagrama de codigo](#94-diagrama-de-codigo)
+- [10. Protótipo de telas](#10-protótipo-de-telas)
+- [11. Diagrama de navegação de telas](#11-diagrama-de-navegação-de-telas)
+- [12. Pilha tecnologica](#12-pilha-tecnologica)
+- [13. Requisitos de sistema](#13-requisitos-de-sistema)
+  - [13.1 Requisitos do lado do cliente](#131-requisitos-do-lado-do-cliente)
+    - [1. Requisitos de Hardware](#1-requisitos-de-hardware)
+    - [2. Requisitos de Sistema Operacional](#2-requisitos-de-sistema-operacional)
+    - [3. Requisitos de Navegador](#3-requisitos-de-navegador)
+    - [4. Requisitos de Rede](#4-requisitos-de-rede)
+    - [5. Requisitos de Software](#5-requisitos-de-software)
+    - [6. Requisitos de Acessibilidade](#6-requisitos-de-acessibilidade)
+    - [7. Outros Requisitos](#7-outros-requisitos)
+  - [13.2 Requisitos do lado do servidor](#132-requisitos-do-lado-do-servidor)
+    - [1. Requisitos de Hardware](#1-requisitos-de-hardware-1)
+    - [2. Requisitos de Sistema Operacional](#2-requisitos-de-sistema-operacional-1)
+    - [3. Requisitos de Software](#3-requisitos-de-software)
+    - [4. Requisitos de Rede](#4-requisitos-de-rede-1)
+    - [5. Requisitos de Desempenho](#5-requisitos-de-desempenho)
+    - [6. Requisitos de Segurança](#6-requisitos-de-segurança)
+    - [7. Monitoramento e Manutenção](#7-monitoramento-e-manutenção)
+- [14. Consideração sobre segurança](#14-consideração-sobre-segurança)
+  - [14.1. Lado cliente](#141-lado-cliente)
+  - [14.2 Lado servidor](#142-lado-servidor)
+- [15. Manutenção e instalação](#15-manutenção-e-instalação)
+  - [1. Instalação](#1-instalação)
+    - [1.1. Requisitos de Sistema](#11-requisitos-de-sistema)
+    - [1.2. Procedimento de Instalação](#12-procedimento-de-instalação)
+    - [1.3. Configuração Inicial](#13-configuração-inicial)
+  - [2. Funcionalidades](#2-funcionalidades)
+    - [2.1. Interface do Usuário](#21-interface-do-usuário)
+    - [2.2. Autenticação](#22-autenticação)
+    - [2.3. Manipulação de Dados](#23-manipulação-de-dados)
+    - [2.4. Notificações](#24-notificações)
+  - [3. Manutenção](#3-manutenção)
+    - [3.1. Atualizações de Sistema](#31-atualizações-de-sistema)
+    - [3.2. Suporte Técnico](#32-suporte-técnico)
+    - [3.3. Monitoramento e Feedback](#33-monitoramento-e-feedback)
+- [16. Treinamento](#16-treinamento)
+- [17. Script SQL](#17-script-sql)
+  - [17.1. Comandos CREATE table](#171-comandos-create-table)
+  - [17.2. Comandos INSERT table](#172-comandos-insert-table)
+
 
 
 # **1. Visão Geral do Problema**
 
 O sistema é projetado para atender uma clínica veterinária de pequeno porte especializada em gatos e cachorros. O mercado não oferece soluções que atendam às necessidades específicas do negócio, e por isso, foi decidido o desenvolvimento de uma plataforma própria.
 
-
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 # 2. Descrição do negócio
 
 Descrição do cenário onde o sistema deverá funcionar:
@@ -70,6 +142,53 @@ Descrição do cenário onde o sistema deverá funcionar:
 29. Histórico de atendimentos.
 30. Módulo de farmacia, constando medicamentos, diluentes e reconstituintes presentes na clínica.
 
+## 2.1 Requisitos
+
+### Requisitos Funcionais e Não Funcionais
+
+| **Tipo**          | **Requisito**                                                                                               |
+| ----------------- | ----------------------------------------------------------------------------------------------------------- |
+| **Funcional**     | 1. Marcar animais com RFID                                                                                  |
+| **Funcional**     | 2. A clínica veterinária atende apenas gatos e cachorros                                                    |
+| **Funcional**     | 3. O cliente deve cadastrar a si mesmo e seus animais                                                       |
+| **Funcional**     | 4. O cliente deve informar as condições nas quais os animais chegam                                         |
+| **Funcional**     | 5. O cliente deve informar o tipo de ração que o animal consome                                             |
+| **Funcional**     | 6. O cliente deve informar os hábitos do animal                                                             |
+| **Funcional**     | 7. Mais de um veterinário pode atender um animal                                                            |
+| **Funcional**     | 8. Os animais são atendidos de acordo com a agenda do dia                                                   |
+| **Funcional**     | 9. Cada animal atendido recebe uma ficha e um prontuário                                                    |
+| **Funcional**     | 10. Outros donos podem agendar atendimento futuro                                                           |
+| **Funcional**     | 11. O atendimento gera uma receita para o animal                                                            |
+| **Funcional**     | 12. O atendente verifica a disponibilidade de agenda do veterinário                                         |
+| **Funcional**     | 13. O atendente pode colocar o cliente e o animal na fila de espera, se necessário                          |
+| **Funcional**     | 14. O atendente leva o cliente e o animal até o veterinário                                                 |
+| **Funcional**     | 15. O veterinário realiza uma entrevista com o dono do animal                                               |
+| **Funcional**     | 16. O resultado da entrevista deve ser registrado em um formulário                                          |
+| **Funcional**     | 17. O veterinário examina o animal e anota suas observações no prontuário                                   |
+| **Funcional**     | 18. Dependendo do diagnóstico, o animal recebe uma receita                                                  |
+| **Funcional**     | 19. Integração com sistemas de pagamento para pagamento de consultas e serviços                             |
+| **Funcional**     | 20. O sistema envia notificações automáticas para clientes sobre consultas agendadas                        |
+| **Funcional**     | 21. Histórico médico completo do animal, incluindo vacinas, exames, cirurgias e medicações                  |
+| **Funcional**     | 22. O sistema permite gerar relatórios financeiros                                                          |
+| **Funcional**     | 23. Controle de estoque de itens cirúrgicos                                                                 |
+| **Funcional**     | 24. Emissão de carteira de vacinação para os animais                                                        |
+| **Funcional**     | 25. Emissão de declaração de comparecimento para os tutores                                                 |
+| **Funcional**     | 26. Prontuário eletrônico contendo anamnese, receituário, evolução e alergias                               |
+| **Funcional**     | 27. Sistema inclui grid de classificação de risco dos pets internados                                       |
+| **Funcional**     | 28. Histórico de atendimentos disponíveis para consulta                                                     |
+| **Funcional**     | 29. Módulo de farmácia com medicamentos, diluentes e reconstituintes disponíveis na clínica                 |
+| **Não Funcional** | 1. O sistema deve ser acessível via navegador web em diferentes dispositivos (desktop e mobile)             |
+| **Não Funcional** | 2. O sistema deve garantir a segurança das informações dos clientes e dos animais (proteção de dados)       |
+| **Não Funcional** | 3. O sistema deve ser escalável para suportar um aumento no número de clientes e animais atendidos          |
+| **Não Funcional** | 4. O tempo de resposta do sistema para realizar consultas e salvar dados deve ser inferior a 2 segundos     |
+| **Não Funcional** | 5. O sistema deve ser tolerante a falhas, com backup e recuperação de dados em caso de erro                 |
+| **Não Funcional** | 6. A interface do usuário deve ser amigável e fácil de navegar para atender diferentes perfis de usuários   |
+| **Não Funcional** | 7. O sistema deve ser compatível com sistemas operacionais como Windows, macOS, Linux e plataformas móveis  |
+| **Não Funcional** | 8. O sistema deve garantir alta disponibilidade (99,9% de uptime) e ser resiliente a falhas                 |
+| **Não Funcional** | 9. O sistema deve ter integração com sistemas externos, como plataformas de pagamento e sistemas de estoque |
+| **Não Funcional** | 10. O sistema deve ser auditável e registrar todas as ações feitas pelos usuários para fins de segurança    |
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
+
 # 3. Visão geral do sistema
 1. **Cadastro de Usuário e Animais**: Registro de informações pessoais e dos animais (gatos e cachorros).
 
@@ -95,6 +214,7 @@ Descrição do cenário onde o sistema deverá funcionar:
 
 11. **Módulo de Farmácia**: Acesso a medicamentos disponíveis na clínica.
 
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 
 # 4. Diagrama ER
 ```mermaid
@@ -176,6 +296,7 @@ erDiagram
     ANIMAIS ||--o{ FARMACIA : utiliza
     ATENDIMENTOS ||--o{ PAGAMENTOS : associado_a
 ```
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 
 # 5. Diagrama de classe
 ```mermaid
@@ -326,6 +447,8 @@ classDiagram
     GridClassificacaoRisco "1" -- "0..*" Animal : classifica
 
 ```
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
+
 # 6. Casos de uso
   ## 6.1 Casos de uso
 ![caso de uso](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/Diagrama%20caso%20de%20uso.png?raw=true)
@@ -480,22 +603,208 @@ classDiagram
 **Como** um farmacêutico da clínica,  
 **Eu quero** gerenciar os medicamentos, diluentes e reconstituintes presentes na clínica,  
 **Para que** o estoque esteja sempre atualizado e os tratamentos sejam realizados sem interrupções.
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 
 # 7. Diagrama de componentes
 ![Diagrama de componentes](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/Componente.png?raw=true)
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 
 # 8. Diagrama de implantação
 ![Diagrama de implantação](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/Implantacao.png?raw=true)
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 
-# 9. Protótipo de telas
+# 9. Diagrama C4
+
+## 9.1 Diagrama de contexto
+```mermaid
+graph LR
+    subgraph Sistema
+        direction TB
+        S1[Clínica Veterinária] 
+    end
+
+    subgraph Ator1 [Cliente]
+        direction TB
+        C1[Cadastro de cliente]
+        C2[Cadastro de animais]
+        C3[Agendamento de consultas]
+        C4[Pagamento de consultas]
+    end
+    
+    subgraph Ator2 [Veterinário]
+        direction TB
+        V1[Entrevista com o dono do animal]
+        V2[Exame do animal]
+        V3[Receita e prontuário]
+    end
+
+    subgraph Ator3 [Atendente]
+        direction TB
+        A1[Verificar agenda disponível]
+        A2[Registrar o atendimento na fila de espera]
+        A3[Acompanhar atendimento]
+    end
+
+    subgraph Ator4 [Sistema de Pagamento]
+        direction TB
+        P1[Processar pagamento]
+    end
+
+    subgraph Ator5 [Sistema de Estoque]
+        direction TB
+        E1[Controle de estoque de itens cirúrgicos]
+    end
+
+    S1 --> A1
+    S1 --> V1
+    S1 --> P1
+    S1 --> E1
+    C1 --> S1
+    C2 --> S1
+    C3 --> S1
+    C4 --> P1
+    V2 --> S1
+    V3 --> S1
+    A2 --> S1
+    A3 --> S1
+```
+## 9.2 Diagrama de container
+```mermaid
+graph TD
+    subgraph Sistema
+        direction TB
+        A[Aplicação Web] 
+        B[Banco de Dados]
+        C[Serviço de Pagamento]
+        D[Serviço de Estoque]
+        E[Notificador]
+    end
+
+    A -->|Armazenamento de dados| B
+    A -->|Integração de pagamentos| C
+    A -->|Controle de estoque| D
+    A -->|Notificações automáticas| E
+    B -->|Dados de clientes, animais, e prontuários| A
+    C -->|Processamento de transações| A
+    D -->|Informações sobre estoque| A
+    E -->|Envio de notificações| A
+```
+## 9.3 Diagrama de componentes
+```mermaid
+graph TD
+    subgraph Aplicação Web
+        direction TB
+        A1[Componente de Cadastro]
+        A2[Componente de Agendamento]
+        A3[Componente de Atendimento]
+        A4[Componente de Pagamento]
+        A5[Componente de Notificação]
+        A6[Componente de Prontuário]
+    end
+
+    subgraph Banco de Dados
+        direction TB
+        B1[Tabelas de Clientes]
+        B2[Tabelas de Animais]
+        B3[Tabelas de Consultas]
+        B4[Tabelas de Histórico Médico]
+    end
+
+    subgraph Serviço de Pagamento
+        direction TB
+        C1[API de Processamento de Pagamento]
+        C2[Gateway de Pagamento]
+    end
+
+    subgraph Serviço de Estoque
+        direction TB
+        D1[Controle de Inventário de Cirúrgicos]
+        D2[API de Estoque]
+    end
+
+    subgraph Notificador
+        direction TB
+        E1[Serviço de Envio de Notificações]
+    end
+
+    A1 --> B1
+    A2 --> B3
+    A3 --> B2
+    A4 --> C1
+    A5 --> E1
+    A6 --> B4
+    C1 --> C2
+    D1 --> D2
+```
+## 9.4 Diagrama de codigo
+```mermaid
+ graph TD
+    subgraph Cadastro
+        direction TB
+        C1[Cliente]
+        C2[Animal]
+        C3[CadastroService]
+    end
+
+    subgraph Agendamento
+        direction TB
+        A1[Consulta]
+        A2[Agenda]
+        A3[AgendamentoService]
+    end
+
+    subgraph Atendimento
+        direction TB
+        T1[Atendimento]
+        T2[Veterinário]
+        T3[Entrevista]
+        T4[Prontuário]
+        T5[Receita]
+    end
+
+    subgraph Pagamento
+        direction TB
+        P1[Transação]
+        P2[PagamentoService]
+    end
+
+    subgraph Estoque
+        direction TB
+        E1[Item]
+        E2[EstoqueService]
+    end
+
+    subgraph Notificação
+        direction TB
+        N1[Notificação]
+        N2[NotificaçãoService]
+    end
+
+    C1 --> C3
+    C2 --> C3
+    A1 --> A3
+    A2 --> A3
+    T1 --> T2
+    T2 --> T3
+    T2 --> T4
+    T4 --> T5
+    P1 --> P2
+    E1 --> E2
+    N1 --> N2
+```
+
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
+
+# 10. Protótipo de telas
 ![Tela de cadastro de animais](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/animais.png?raw=true)
 ![Relatório de agendamentos](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/cadastros.png?raw=true)
 ![Dashboard](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/dashboard.png?raw=true)
 ![Controle do estoque](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/estoque.png?raw=true)
 ![Listagem do estoque](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/estoque2.png?raw=true)
 
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 
-# 10. Diagrama de navegação de telas
+# 11. Diagrama de navegação de telas
 ```mermaid
 graph TD;
     A[Login] -->|Sucesso| B[Menu Principal]
@@ -533,13 +842,14 @@ graph TD;
 
     I --> AB[Notificações de Consultas]
 ```
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 
-# 11. Pilha tecnologica
+# 12. Pilha tecnologica
 ![Pilha tecnologica](https://github.com/kennyamabile/kenny_amabile_engsw/blob/main/item11.png?raw=true)
 
-# 12. Requisitos de sistema
+# 13. Requisitos de sistema
 
-## 12.1 Requisitos do lado do cliente 
+## 13.1 Requisitos do lado do cliente 
 
 ### 1. Requisitos de Hardware
 - **Processador**: Mínimo de [especificar modelo e velocidade, por exemplo, Intel i3 ou equivalente].
@@ -569,7 +879,7 @@ graph TD;
 ### 7. Outros Requisitos
 - **Permissões de Usuário**: O usuário deve ter permissões de admin adequadas para instalar o software.
 
-## 12.2 Requisitos do lado do servidor 
+## 13.2 Requisitos do lado do servidor 
 
 ### 1. Requisitos de Hardware
 - **Processador**: Mínimo de Intel Xeon E5 ou equivalente.
@@ -605,21 +915,21 @@ graph TD;
 ### 7. Monitoramento e Manutenção
 - **Ferramentas de Monitoramento**: Implementação de ferramentas para monitoramento de desempenho e logs, como Prometheus e Grafana.
 - **Procedimentos de Manutenção**: Planos para manutenção regular do servidor e atualizações de software.
+[Voltar ao inicio](#repositório-de-engenharia-de-software---sistema-para-petshop)
 
-# 13. Consideração sobre segurança
-
-## 13.1. Lado cliente
+# 14. Consideração sobre segurança
+## 14.1. Lado cliente
 Regras para login
 -  Captcha, quantidade minima de caracteres, caracteres especiais...
 -  Autenticação 2FA;
 -  Recuperação de senha com email; 
 
-## 13.2 Lado servidor
+## 14.2 Lado servidor
 - Implementação de rotina de backup diario; 
 - 1x na semana realizar um full backup;
 - O admin do sistema não pode acessar dados do cliente;
 
-# 14. Manutenção e instalação
+# 15. Manutenção e instalação
 
 ## 1. Instalação
 
@@ -666,7 +976,7 @@ Regras para login
 - **Relatórios de Erros**: Permitir que usuários relatem problemas facilmente.
 - **Coleta de Feedback**: Sistema para coletar sugestões e melhorias.
 
-# 15. Treinamento
+# 16. Treinamento
 Treinamento ao Vivo Online
 Caso solicitado, oferecemos a possibilidade de realizar um treinamento ao vivo de forma online. Para agendar essa sessão, basta entrar em contato diretamente com nosso atendimento ao cliente. É importante que você especifique o cargo do usuário que receberá o treinamento, pois isso nos permitirá personalizar o conteúdo de acordo com as necessidades específicas da sua função.
 
@@ -675,8 +985,8 @@ O treinamento será realizado através da plataforma Google Meet, onde nossa equ
 Videos/Treinamento
 Além disso, queremos ressaltar que na página do desenvolvedor, você encontrará um compilado de vídeos de treinamento. Esses vídeos estão disponíveis para todos os usuários que possuem login no sistema, proporcionando acesso a recursos adicionais que podem complementar o aprendizado.
 
-# 16. Script SQL
-## 16.1. Comandos CREATE table
+# 17. Script SQL
+## 17.1. Comandos CREATE table
 ```sql
 -- Tabela ANIMAIS
 CREATE TABLE ANIMAIS (
@@ -762,7 +1072,7 @@ CREATE TABLE FARMACIA (
 );
 ```
 
-## 16.2. Comandos INSERT table
+## 17.2. Comandos INSERT table
 
 ```sql
 -- Populando a tabela CLIENTES
