@@ -137,7 +137,7 @@ Descrição do cenário onde o sistema deverá funcionar:
 24. Controle de estoque de itens cirurgicos.
 25. Emissão de carteira de vacinação.
 26. Emissão de declaração de comparecimento para tutores.
-27. Prontuario eletronico com anamnese, recituario, evolução e alergias.
+27. Prontuario eletronico com anamnese, receituario, evolução e alergias.
 28. Grid com classificação de risco dos pets internados.
 29. Histórico de atendimentos.
 30. Módulo de farmacia, constando medicamentos, diluentes e reconstituintes presentes na clínica.
